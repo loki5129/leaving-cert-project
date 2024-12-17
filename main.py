@@ -1,6 +1,6 @@
 from pandas import *
 #csv file name
-filename = "C:\\Users\\Student 2021\\Desktop\\tsw\\CS PROJECT\\Pokemon.csv"
+filename = "C:\\Users\\student\\Documents\\GitHub\\leaving-cert-project\\Pokemon.csv"
 
 
 data = read_csv(filename)
@@ -38,12 +38,28 @@ for i in range(len(data_dict)):
         if (key in str(data_dict[i]).lower()):
             types[keys[c]] +=1
             #print("11")
-
+#print(types)
 import matplotlib.pyplot as plt
 
-y = [types["Bug"],types["Dark"],types["Dragon"],types["Electric"],types["Fairy"],types["Fighting"],types["Fire"],types["Flying"],types["Ghost"],types["Grass"],types["Ground"],types["Ice"],types["Normal"],types["Poison"],types["Psychic"],types["Rock"],types["Steel"],types["Water"]]
-x = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18]
+color = ["#1552E2","#AB2021","#147B3D","#A9702C","#48180B","#1C4B27","#4A677D","#E3E32B","#86D2F5","#5F756D","#5E2D88","#448B95","#33336B","#040706","#971944","#994025","#A42A6C","#FAF9F6"]
 
-plt.plot(x,y)
+edgecolor = ["black"]
+
+y = [types[keys[0]],types[keys[1]],types[keys[2]],types[keys[3]],types[keys[4]],types[keys[5]],types[keys[6]],types[keys[7]],types[keys[8]],types[keys[9]],types[keys[10]],types[keys[11]],types[keys[12]],types[keys[13]],types[keys[14]],types[keys[15]],types[keys[16]],types[keys[17]]]
+
+x = [keys[0],keys[1],keys[2],keys[3],keys[4],keys[5],keys[6],keys[7],keys[8],keys[9],keys[10],keys[11],keys[12],keys[13],keys[14],keys[15],keys[16],keys[17]]
+
+
+plt.xlabel("types of pokemon used by trainer")
+
+plt.ylabel("frequncey of types used")
+
+plt.title("frequnecy of pokemon types found in trainer's teams")
+
+plt.bar(x,
+        y,
+        color =color,
+        edgecolor=edgecolor,
+        linewidth =1)
 
 plt.show()

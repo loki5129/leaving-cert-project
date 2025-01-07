@@ -1,8 +1,32 @@
 from pandas import *
 from numpy import *
+import csv
 #csv file name
-filename = "C:\\Users\\thoma\\OneDrive\\Documents\\GitHub\\leaving-cert-project\\Pokemon.csv"
+oginal_filename = "C:/Users/thoma/Downloads/leaving-cert-project-main/leaving-cert-project-main/Pokemon.csv"
+#section  of code resolving cleaning the csv file
+data_to_be_cleaned = read_csv(oginal_filename)
+#print(data_to_be_cleaned)
+data_to_be_cleaned.pop("place")
+#print(data_to_be_cleaned)
+data_to_be_cleaned.pop("type2")
+#print(data_to_be_cleaned)
+data_to_be_cleaned.pop("hp")
+#print(data_to_be_cleaned)
+data_to_be_cleaned.pop("maxhp")
+#print(data_to_be_cleaned)
+data_to_be_cleaned.pop("attack")
+#print(data_to_be_cleaned)
+data_to_be_cleaned.pop("defense")
+#print(data_to_be_cleaned)
+data_to_be_cleaned.pop("spatk")
+#print(data_to_be_cleaned)
+data_to_be_cleaned.pop("spdef")
+#print(data_to_be_cleaned)
+data_to_be_cleaned.pop("speed")
+#print(data_to_be_cleaned)
 
+data_to_be_cleaned.to_csv("cleaned_data.csv",index=False)
+filename = "cleaned_data.csv"
 
 data = read_csv(filename)
 
@@ -57,7 +81,7 @@ def clean(string):
   #print(cleaned)
   cleaned=str(cleaned)
   #print(cleaned)
-  cleaned =cleaned.replace("\'level\':","")
+  cleaned =cleaned.replace("\'pokelevel\':","")
   #print(cleaned)
   cleaned = re.sub(r"[\([{})\]]"," ",cleaned)
   #print(cleaned)

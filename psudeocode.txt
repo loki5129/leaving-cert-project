@@ -1,0 +1,26 @@
+import modules
+
+csv readed into data
+Initialize Data Structures
+ types defiend as a dict without count
+ empty list for levels
+
+data cleaned 
+ funcion
+  loop
+
+
+data searched and types counted
+ loop 
+  if type in data{loop count}
+   added into corresponing type in the dict
+
+
+colors defined
+data searched and levels added to a list
+funcion
+ loop 
+   loop
+type count and types ploted on a barchart
+ 
+levels are put into a histogram.

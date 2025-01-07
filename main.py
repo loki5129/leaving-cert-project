@@ -1,6 +1,7 @@
 from pandas import *
+from numpy import *
 #csv file name
-filename = "C:\\Users\\Student 2021\\Downloads\\leaving-cert-project-main\\leaving-cert-project-main\\Pokemon.csv"
+filename = "C:\\Users\\thoma\\OneDrive\\Documents\\GitHub\\leaving-cert-project\\Pokemon.csv"
 
 
 data = read_csv(filename)
@@ -72,27 +73,112 @@ for i in range(len(data_dict)):
     level_list.append(level_to_be_added)
 
 
-import matplotlib.pyplot as plt
-
-color = ["#1552E2","#AB2021","#147B3D","#A9702C","#48180B","#1C4B27","#4A677D","#E3E32B","#86D2F5","#5F756D","#5E2D88","#448B95","#33336B","#040706","#971944","#994025","#A42A6C","#FAF9F6"]
-
-edgecolor = ["black"]
-
-y = [types[keys[0]],types[keys[1]],types[keys[2]],types[keys[3]],types[keys[4]],types[keys[5]],types[keys[6]],types[keys[7]],types[keys[8]],types[keys[9]],types[keys[10]],types[keys[11]],types[keys[12]],types[keys[13]],types[keys[14]],types[keys[15]],types[keys[16]],types[keys[17]]]
-
-x = [keys[0],keys[1],keys[2],keys[3],keys[4],keys[5],keys[6],keys[7],keys[8],keys[9],keys[10],keys[11],keys[12],keys[13],keys[14],keys[15],keys[16],keys[17]]
 
 
-plt.xlabel("types of pokemon used by trainer")
+color = ["#1552E2","#AB2021","#147B3D","#A9702C","#48180B","#1C4B27","#4A677D","#E3E32B","#86D2F5","#5F756D","#5E2D88","#448B95","#33336B","#040706","#971944","#994025","#A42A6C","#FAF9F6"]#defien each colour for each bar in hexcode
 
-plt.ylabel("frequncey of types used")
 
-plt.title("frequnecy of pokemon types found in trainer's teams")
+y= []
+for i in range(len(keys)):
+    y.append(types[keys[i]])
+x=[]
+for i in range(len(keys)):
+    x.append(keys[i])
 
-plt.bar(x,
-      y,
-      color =color,
-      edgecolor=edgecolor,
-       linewidth =1)
-#plt.subplot(plt.hist(level_list))
-plt.show()
+standard_devetion_level=std(level_list)
+mean_level = mean(level_list)
+
+
+
+
+import plotly.graph_objects as px
+bar_chart=px.Bar(
+    x=x 
+    ,y=y,
+    marker=dict(color=color, 
+                           line=dict(color='rgb(100,100,100)', 
+                                     width=1))
+    )
+ 
+
+
+
+histogram=px.Histogram(
+    x=level_list,
+    histnorm="probability density",
+    nbinsx=10,
+    marker=dict(
+        line=dict(color='rgb(100,100,100)',
+                  width=1)
+    )
+    
+    
+    )
+fig=px.Figure() 
+fig.add_trace(bar_chart)
+fig.add_trace(histogram)
+
+fig.update_traces(visible=False)
+fig.data[0].visible = True
+
+
+fig.update_layout(
+    
+   
+    
+    updatemenus=[
+        dict(
+            type="dropdown",
+            direction="down",
+            buttons=[
+                dict(
+                    label="Bar chart",
+                    method="update",
+                    args=[
+                        {"visible": [True, False]},  # Show histogram, hide bar chart
+                        {
+                            "title": "Bar Chart of types of pokemon found in trainers",
+                            
+                            
+                            "xaxis":{
+                               "dtick": None,
+                               "range": None,  # Reset any range set by the Histogram
+                               "title": "Types of Pokémon"
+                            }
+                             },
+                    ],
+                ), 
+                dict(
+                    label="Histogram",
+                    method="update",
+                    args=[
+                        {"visible": [False, True]},  # Show bar chart, hide histogram
+                        {
+                            "title": "Histogram of Pokémon Levels Found in Trainers",
+                            "annotations":[
+                            dict(
+                                x=.5,y=1,
+                                xref="paper",yref="paper",
+                                text=f"mean={mean_level}\nstandrad deveration={standard_devetion_level}",
+                                font=dict(size=14),
+                                showarrow=False,
+                            )
+                        ],
+                            "xaxis": {
+                                "dtick": 10,  
+                                "title": "Levels of Pokémon",  
+                            } 
+                        },
+                    ],
+                ),  
+            ],
+            showactive=True,
+        )
+    ],
+    title="leaving cert project grpahs",
+    margin=dict(l=50, r=50, t=50, b=120), 
+    xaxis_title="Value",
+    yaxis_title="Frequency",
+          )    
+
+fig.show()

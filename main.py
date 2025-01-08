@@ -2,7 +2,7 @@ from pandas import *
 from numpy import *
 
 #csv file name
-oginal_filename = "C:/Users/student/Downloads/leaving-cert-project-main/leaving-cert-project-main/Pokemon.csv"
+oginal_filename = "leaving-cert-project-main\\Pokemon.csv"
 #section  of code resolving cleaning the csv file
 data_to_be_cleaned = read_csv(oginal_filename)
 #print(data_to_be_cleaned)
@@ -205,11 +205,27 @@ fig.update_layout(
             showactive=True,
         )
     ],
-    title="leaving cert project grpahs",
+    title="frewqunecy that types of pokemon appear in trainers",
     margin=dict(l=50, r=50, t=50, b=120), 
     xaxis_title="tpyes of pokemon",
     yaxis_title="Frequency",
           )    
 fig.update_xaxes(fixedrange=True)
+config = {
+    "modeBarButtonsToRemove": [
+        'zoom',
+        'pan',
+        "zoomin",
+        "zoomout",
+        "select",
+        "lasso2d"],
+    'toImageButtonOptions': {
+    'format': 'svg', 
+    'filename': 'custom_image',
+    'height': 500,
+    'width': 700,
+    'scale': 1
+      }
+}
 
-fig.show()
+fig.show(config=config)

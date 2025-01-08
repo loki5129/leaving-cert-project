@@ -1,6 +1,8 @@
 import modules
+csv is read and cleaned 
+cleaned data is write into new csv
 
-csv readed into data
+cleaned csv is read into data
 Initialize Data Structures
  types defiend as a dict without count
  empty list for levels

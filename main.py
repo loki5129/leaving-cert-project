@@ -1,8 +1,8 @@
 from pandas import *
 from numpy import *
-import csv
+
 #csv file name
-oginal_filename = "C:/Users/thoma/Downloads/leaving-cert-project-main/leaving-cert-project-main/Pokemon.csv"
+oginal_filename = "C:/Users/student/Downloads/leaving-cert-project-main/leaving-cert-project-main/Pokemon.csv"
 #section  of code resolving cleaning the csv file
 data_to_be_cleaned = read_csv(oginal_filename)
 #print(data_to_be_cleaned)
@@ -168,6 +168,9 @@ fig.update_layout(
                                "dtick": None,
                                "range": None,  # Reset any range set by the Histogram
                                "title": "Types of Pokémon"
+                            },
+                            "yaxis":{
+                                "title": "frequncey"
                             }
                              },
                     ],
@@ -191,7 +194,10 @@ fig.update_layout(
                             "xaxis": {
                                 "dtick": 10,  
                                 "title": "Levels of Pokémon",  
-                            } 
+                            } ,
+                            "yaxis":{
+                                "title": "probality of level occuring",
+                            }
                         },
                     ],
                 ),  
@@ -201,8 +207,9 @@ fig.update_layout(
     ],
     title="leaving cert project grpahs",
     margin=dict(l=50, r=50, t=50, b=120), 
-    xaxis_title="Value",
+    xaxis_title="tpyes of pokemon",
     yaxis_title="Frequency",
           )    
+fig.update_xaxes(fixedrange=True)
 
 fig.show()

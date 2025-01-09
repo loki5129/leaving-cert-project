@@ -2,7 +2,7 @@ from pandas import *
 from numpy import *
 
 #csv file name
-oginal_filename = "leaving-cert-project-main\\Pokemon.csv"
+oginal_filename = "Pokemon.csv"
 #section  of code resolving cleaning the csv file
 data_to_be_cleaned = read_csv(oginal_filename)
 #print(data_to_be_cleaned)
@@ -228,4 +228,18 @@ config = {
       }
 }
 
-fig.show(config=config)
+#fig.show(config=config)
+from jinja2 import Template
+
+
+
+output_html_path=r"index.html"
+input_template_path = r"indexog.html"
+
+plotly_jinja_data = {"fig":fig.to_html(full_html=False,include_plotlyjs=False,include_mathjax=False,default_height=800,config=config)}
+#consider also defining the include_plotlyjs parameter to point to an external Plotly.js as described above
+
+with open(output_html_path, "w", encoding="utf-8") as output_file:
+    with open(input_template_path) as template_file:
+        j2_template = Template(template_file.read())
+        output_file.write(j2_template.render(plotly_jinja_data))

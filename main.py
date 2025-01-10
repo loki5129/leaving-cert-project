@@ -212,20 +212,15 @@ fig.update_layout(
           )    
 fig.update_xaxes(fixedrange=True)
 config = {
+   "displaylogo": Fasle,
     "modeBarButtonsToRemove": [
         'zoom',
         'pan',
         "zoomin",
         "zoomout",
         "select",
-        "lasso2d"],
-    'toImageButtonOptions': {
-    'format': 'svg', 
-    'filename': 'custom_image',
-    'height': 500,
-    'width': 700,
-    'scale': 1
-      }
+        "lasso2d",
+        "toimage"]
 }
 
 #fig.show(config=config)

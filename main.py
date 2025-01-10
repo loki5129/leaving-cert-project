@@ -212,7 +212,7 @@ fig.update_layout(
           )    
 fig.update_xaxes(fixedrange=True)
 config = {
-   "displaylogo": Fasle,
+   "displaylogo": False,
     "modeBarButtonsToRemove": [
         'zoom',
         'pan',
@@ -228,13 +228,33 @@ from jinja2 import Template
 
 
 
-output_html_path=r"index.html"
-input_template_path = r"indexog.html"
+output_js_path=r"plot.js"
+input_templatejs_path = r"template.js"
 
 plotly_jinja_data = {"fig":fig.to_html(full_html=False,include_plotlyjs=False,include_mathjax=False,default_height=800,config=config)}
 #consider also defining the include_plotlyjs parameter to point to an external Plotly.js as described above
 
+with open(output_js_path, "w", encoding="utf-8") as output_file:
+    with open(input_templatejs_path) as template_file:
+        j2_template = Template(template_file.read())
+        output_file.write(j2_template.render(plotly_jinja_data))
+
+
+with open(output_js_path,"r")as f:
+    lines=f.read()
+    
+div=lines[:148]
+lines=lines[215:-48]
+
+with open(output_js_path,"w")as f:
+    f.write(lines)
+
+
+input_html_path = r"og_index.html"
+output_html_path = r"new_index.html"
+
+plotly_jinja_data = {"fig":div}
 with open(output_html_path, "w", encoding="utf-8") as output_file:
-    with open(input_template_path) as template_file:
+    with open(input_html_path) as template_file:
         j2_template = Template(template_file.read())
         output_file.write(j2_template.render(plotly_jinja_data))

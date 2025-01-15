@@ -4,28 +4,28 @@ from numpy import *
 #csv file name
 oginal_filename = "Pokemon.csv"
 #section  of code resolving cleaning the csv file
-data_to_be_cleaned = read_csv(oginal_filename)
-#print(data_to_be_cleaned)
-data_to_be_cleaned.pop("place")
-#print(data_to_be_cleaned)
-data_to_be_cleaned.pop("type2")
-#print(data_to_be_cleaned)
-data_to_be_cleaned.pop("hp")
-#print(data_to_be_cleaned)
-data_to_be_cleaned.pop("maxhp")
-#print(data_to_be_cleaned)
-data_to_be_cleaned.pop("attack")
-#print(data_to_be_cleaned)
-data_to_be_cleaned.pop("defense")
-#print(data_to_be_cleaned)
-data_to_be_cleaned.pop("spatk")
-#print(data_to_be_cleaned)
-data_to_be_cleaned.pop("spdef")
-#print(data_to_be_cleaned)
-data_to_be_cleaned.pop("speed")
-#print(data_to_be_cleaned)
+raw_data = read_csv(oginal_filename)
+#print(raw_data)
+raw_data.pop("place")
+#print(raw_data)
+raw_data.pop("type2")
+#print(raw_data)
+raw_data.pop("hp")
+#print(raw_data)
+raw_data.pop("maxhp")
+#print(raw_data)
+raw_data.pop("attack")
+#print(raw_data)
+raw_data.pop("defense")
+#print(raw_data)
+raw_data.pop("spatk")
+#print(raw_data)
+raw_data.pop("spdef")
+#print(raw_data)
+raw_data.pop("speed")
+#print(raw_data)
 
-data_to_be_cleaned.to_csv("cleaned_data.csv",index=False)
+raw_data.to_csv("cleaned_data.csv",index=False)
 filename = "cleaned_data.csv"
 
 data = read_csv(filename)
@@ -56,7 +56,7 @@ types = {
     "Normal":0,
 
 }
-
+types["Water"] += 1
 keys = list(types.keys())
 for i in range(len(data_dict)):
     for c in range(len(keys)):
@@ -182,15 +182,6 @@ fig.update_layout(
                         {"visible": [False, True]},  # Show bar chart, hide histogram
                         {
                             "title": "Histogram of Pokémon Levels Found in Trainers",
-                            "annotations":[
-                            dict(
-                                x=.5,y=1,
-                                xref="paper",yref="paper",
-                                text=f"mean={mean_level}\nstandrad deveration={standard_devetion_level}",
-                                font=dict(size=14),
-                                showarrow=False,
-                            )
-                        ],
                             "xaxis": {
                                 "dtick": 10,  
                                 "title": "Levels of Pokémon",  

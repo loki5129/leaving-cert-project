@@ -6,17 +6,8 @@
 <head>
 
 <title> Coursework report </title>
+<LINK href="style.css" rel="stylesheet" type="text/css">
 
-<style>
-
-table, th, td {
-  border: 1px solid black;
-}
-td{
-	text-align: center;
-}
-
-</style>
 <script src="https://cdn.plot.ly/plotly-2.35.2.min.js" charset="utf-8"></script>
 <script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 <script src="plot.js" defer></script>
@@ -38,106 +29,115 @@ td{
 
 
 <h1> Investigation (approximately 400 words) </h1>
- <p>my frsit idea was to make a project using the different types of enregy used for electricly in ireland and graph tham over time, i decided againist 
- this idea because i wanted something that was more instering to me and i wanted to use a dataset with more data.
- the second idea i came up with was to use a pokemon dataset to find the base stat total and find which type had the highest mean value and then plot 
- spefic stats and highest mean value in the tpyes of pokemon.thirid idea which is sthe one i when with is to use a dataset containing pokemon 
- traniers and their pokemon and find out the most common types and average level of pokemon that appear in said trainer dataset. i found this dataset 
- on kaggle<sup>[2]</sup>.i started by reasearching pokemon levels i found a article on bulbapedia<sup>[1]</sup>
- i found out that pokemon levels have a range of 1 to 100 using this i planned the project to use this data for a histogram. this also serves as a good test that if i see a 0 in the graph i know that 
- that something has gone wrong and i need to rexemaie the code. i then researed similar project i found someone who has made a similar project i found this on reddit<sup>[3]</sup>, this project was a 
- simallar projext but only spaned 3 generations of pokemon and was the most common pokemon and not the most the common type or distribtion of levels.
- i reasearched pokemon types, i learned that there are 20 types in the pokemon world<sup>[4]</sup> two of these tpyes are not presence in the data due to the fact that
- they are only used in the lasted game and the dataset was created 8 years ago. with these 18 i plan on making an algrithom to find how many of each type and making them 
- into a bar chart. 
- i researched what data was in the data set i relaised that i didnt need the majorty of the data. i found that the data set cotained games in generation 1 - 6 a table is show below with red showing that it is not 
- is the data and green showing that it is. this data aslo includes rematchs that can be done after defeatting a trainer the frist time<sup>[5]</sup> 
- note this can only in be done in games form geneartaion 3 and on. 
-	 <table style="width:70%">
+ <p>
+my first idea was to make a project using the different types of energy used for electrically in Ireland. The second idea i came up with was to use 
+a Pokémon dataset to find the base stat total and find which type had the highest mean value. third idea which is the one I went with is to use a 
+dataset containing Pokémon trainers and their Pokémon and find out the most common types and average level of Pokémon. I found this dataset on Kaggle
+<sup>[2]</sup>.I started by researching Pokémon levels I found an article on bulbapedia<sup>[1]</sup>I found out that Pokémon levels have a range of 1 to 100. 
+I then researched similar project I found someone who had made a similar project found this on reddit<sup>[3]</sup>, this project was similar  but it was
+only one game and was the frequency of Pokémon in trainers.  I researched Pokémon types, I learned that there are 20 types in the Pokémon games<sup>[4]</sup> 
+two of these types are not in the data because they are only used in the latest game, and the dataset was created 8 years ago.i researched what data 
+was in the data set. i found whst games where included in the data these are shown in fig.1. ones are in it in green and those in red are not in the data.
+(all games names shorten by removing teh pokemon prefix). to make this table i found a unqine trainer in the game form a walkthrough on bulbapedia<sup>[6]</sup> 
+and cross checked it to see if it was in the data. this data aslo includes rematchs that can be done after defeatting a trainer the frist time<sup>[5]</sup>.
+i aslo discovered that it does not inculde gym leader<sup>[7]</sup>,rivals<sup>[8]</sup>,elite four<sup>[9]</sup> and chanpions<sup>[10]</sup>. rivals are not included because their teams are 
+dependent on what starter<sup>[11]</sup> you pick.
+	 <table style="width:70%" class="center">
 	  <tr>
-		<th colspan="6">games included in the data </th>
+		<th colspan="6">fig.1 </th>
 	  </tr>
 	  <tr>
-		<td bgcolor="green"> pokemon red(japanese version)</td>
-		<td bgcolor="green">pokemon green(japan exclusie)</td>
-		<td bgcolor="green"> pokemon blue(japanese version) </td>
-		<td bgcolor="red"> pokemon stadium(japan) </td>
-	  </tr>
-	  <tr>
-		<td bgcolor="green"> pokemon red</td>
-		<td bgcolor="green"> pokemon blue </td>
-		<td bgcolor="green"> pokemon yellow </td>
-		<td bgcolor="green">pokemon gold</td>
-	  </tr>
-	  <tr>
-		
-		<td bgcolor="green"> pokemon sliver </td>
-		<td bgcolor="green">pokemon crystal</td>
-		<td bgcolor="green">pokemon ruby</td>
-		<td bgcolor="green"> pokemon sapphire </td>
-		<td bgcolor="green"> pokemon stadium </td>
+		<td bgcolor="green">  red(japanese version)</td>
+		<td bgcolor="green"> green(japan exclusie)</td>
+		<td bgcolor="green">  blue(japanese version) </td>
+		<td bgcolor="red">  stadium(japan) </td>
+		<td bgcolor="green">  stadium </td>
 		
 	  </tr>
 	  <tr>
-		<td bgcolor="green"> pokemon emerald</td>
-		<td bgcolor="green">pokemon leafgreen</td>
-		<td bgcolor="green"> pokemon firered </td>
-		<td bgcolor="red"> pokemon stadium 2</td>
-		<td bgcolor="green"> pokemon diamond</td>
+		<td bgcolor="green">  red</td>
+		<td bgcolor="green">  blue </td>
+		<td bgcolor="green">  yellow </td>
+		<td bgcolor="green"> gold</td>
+		<td bgcolor="red">  stadium 2</td>
+
 	  </tr>
 	  <tr>
-		<td bgcolor="green" >pokemon pearl</td>
-		<td bgcolor="green"> pokemon platinum </td>
-		<td bgcolor=""> pokemon heartgold</td>
-		<td bgcolor=""> pokemon box ruby & sapphire </td>
-		<td bgcolor="">pokemon soulsilver</td>
+		
+		<td bgcolor="green">  sliver </td>
+		<td bgcolor="green"> crystal</td>
+		<td bgcolor="green"> ruby</td>
+		<td bgcolor="green">  sapphire </td>
+		<td bgcolor="red">  box ruby & sapphire </td>
+	  </tr>
+	  <tr>
+		<td bgcolor="green">  emerald</td>
+		<td bgcolor="green"> leafgreen</td>
+		<td bgcolor="green">  firered </td>
+		<td bgcolor="green">  diamond</td>
+		<td bgcolor="green"> colosseum </td>
+		
+	  </tr>
+	  <tr>
+		<td bgcolor="green" > pearl</td>
+		<td bgcolor="green">  platinum </td>
+		<td bgcolor="green">  heartgold</td>
+		<td bgcolor="green"> soulsilver</td>
+		<td bgcolor="green"> XD: gale of darkness </td>
+		
 	  </tr>
 	  
 	  <tr>
 		
-		<td bgcolor=""> pokemon black</td>
-		<td bgcolor=""> pokemon white</td>
-		<td bgcolor="">pokemon black 2</td>
-		<td bgcolor="">pokemon colosseum </td>
-		<td bgcolor=""> pokemon white 2 </td>
+		<td bgcolor="">  black</td>
+		<td bgcolor="">  white</td>
+		<td bgcolor=""> black 2</td>
+		<td bgcolor="">  white 2 </td>
+		<td bgcolor="red">  battle revoltuin </td>
 	  </tr>
 	  <tr>
 		
-		<td bgcolor=""> pokemon X</td>
-		<td bgcolor="">pokemon Y</td>
-		<td bgcolor="">pokemon omega ruby </td>
-		<td bgcolor="">pokemon XD: gale of darkness </td>
-		<td bgcolor=""> pokemon alpha sapphire</td>
+		<td bgcolor="">  X</td>
+		<td bgcolor=""> Y</td>
+		<td bgcolor=""> omega ruby </td>
+		<td bgcolor="">  alpha sapphire</td>
+		<td bgcolor="red" > sun</td>
+		
+		
+		
 	
 	  </tr>
 	  <tr>
-		<td bgcolor=""> pokemon alpha sapphire</td>
-		<td bgcolor="red" >pokemon sun</td>
-		<td bgcolor="red"> pokemon moon </td>
-		<td bgcolor="red"> pokemon ultra sun</td>
-		<td bgcolor="red"> pokemon battle revoltuin </td>
-		<td bgcolor="red" >pokemon ultra moon</td>
+		<td bgcolor="red">  moon </td>
+		<td bgcolor="red">  ultra sun</td>
+		<td bgcolor="red">  ultra moon</td>
+		<td bgcolor="red">  let's go pikachu! </td>
+		<td bgcolor="red">  let's go eevee!</td>
 	  </tr>
 	  <tr>
-		<td bgcolor="red"> pokemon let's go pikachu! </td>
-		<td bgcolor="red"> pokemon let's go eevee!</td>
-		<td bgcolor="red" >pokemon sword</td>
-		<td bgcolor="red"> pokemon untie </td>
-		<td bgcolor="red">pokemon sheild</td>
+		<td bgcolor="red" > sword</td>
+		<td bgcolor="red"> sheild</td>
+		<td bgcolor="red" > sword and sheild: the isle of armor</td>
+		<td bgcolor="red"> shining pearl</td>
+		<td bgcolor="red">  brillant diamond</td>
+		
+		
 	  </tr>
 	  <tr>
-
-		<td bgcolor="red"> pokemon legend arceus </td>
-		<td bgcolor="red"> pokemon scarlet</td>
-		<td bgcolor="red">pokemon violet</td>
-		<td bgcolor="red"> pokemon master EX </td>
-		<td bgcolor="red" >pokemon sword and sheild: the isle of armor</td>
+		<td bgcolor="red">  legend arceus </td>
+		<td bgcolor="red">  scarlet</td>
+		<td bgcolor="red"> violet</td>
+		<td bgcolor="red">  scralet and violet: the teal mask </td>
+		<td bgcolor="red">  scralet and violet:the indigo disk</td>
+		
+		
 	  </tr>
 	  <tr>
-		<td bgcolor="red"> pokemon scralet and violet: the teal mask </td>
-		<td bgcolor="red"> pokemon scralet and violet:the indigo disk</td>
-		<td bgcolor="red">pokemon scralet and violet:mochi maythem</td>
+		<td bgcolor="red"> scralet and violet:mochi maythem</td>
 		<td bgcolor="red">pokewalker</td>
+		<td bgcolor="red">  untie </td>
+		<td bgcolor="red">  master EX </td>
+		<td bgcolor="red"> magikarp jump</td>
 		
 	  </tr>
 	
@@ -176,7 +176,7 @@ td{
 	<p> </p>
 
 <br>
-{{fig}}
+<div>                            <div id="5c0404e9-7116-4eb7-bd63-40c87dc90d5e" class="plotly-graph-div" style="height:800px; width:100%;"></div>   
 
 <h1> Evaluation (approximately 300 words) </h1>
 
@@ -189,15 +189,22 @@ td{
 <h1> References </h1>
 
 	<p id=sources>
-	   1.https://bulbapedia.bulbagarden.net/wiki/Level
-	   2.https://www.kaggle.com/datasets/lrcusack/pokemontrainers/data
-	   3.https://www.reddit.com/r/pokemon/comments/jeo6pn/i_made_a_graph_of_how_many_times_each_pokemon_is/
-	   4.https://bulbapedia.bulbagarden.net/wiki/Type
-	   5.https://bulbapedia.bulbagarden.net/wiki/Rematch
-		
+	   1.https://bulbapedia.bulbagarden.net/wiki/Level <br>
+	   2.https://www.kaggle.com/datasets/lrcusack/pokemontrainers/data <br>
+	   3.https://www.reddit.com/r/pokemon/comments/jeo6pn/i_made_a_graph_of_how_many_times_each_pokemon_is/ <br>
+	   4.https://bulbapedia.bulbagarden.net/wiki/Type<br>
+	   5.https://bulbapedia.bulbagarden.net/wiki/Rematch<br>
+	   6.https://bulbapedia.bulbagarden.net/wiki/Browse:Walkthroughs<br>
+	   7.https://bulbapedia.bulbagarden.net/wiki/Gym_Leader <br>
+	   8.https://bulbapedia.bulbagarden.net/wiki/Rival<br>
+	   9.https://bulbapedia.bulbagarden.net/wiki/Elite_Four#Indigo_Elite_Four<br>
+	   10.https://bulbapedia.bulbagarden.net/wiki/Pok%C3%A9mon_Champion<br>
+	   11.https://bulbapedia.bulbagarden.net/wiki/First_partner_Pok%C3%A9mon<br>
 
 
-
+	   https://www.w3.org/TR/html401/present/styles.html to link a css file
+	   https://www.w3schools.com/css/css_background.asp background
+	   https://www.w3schools.com/howto/howto_css_table_center.asp center table
 		 https://www.geeksforgeeks.org/delete-a-csv-column-in-python/ ~~~~source used for removing data form a csv
 		 https://www.geeksforgeeks.org/writing-csv-files-in-python/ a source for making new csv it did not work so did more reasearch
 		 https://stackoverflow.com/questions/67847243/how-to-write-back-the-result-to-the-csv-file-using-pandas-without-replace-the-ex solution to previous cleaning problem

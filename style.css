@@ -17,3 +17,44 @@ body{
     margin-left: auto;
     margin-right: auto;
   }
+
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+    margin:0;
+    text-align: left;
+    
+}
+.image-box {
+    position: relative;
+    margin:0;
+    text-align: left;
+}
+
+.image-text-box{
+    position: absolute;
+    margin:0;
+    text-align: left;
+  
+   
+   color: white;
+}
+.fig2 {
+    margin:0;
+    text-align: left;
+    top:20%;
+    left:40%
+}
+.fig3 {
+    margin:0;
+    text-align: left;
+    top:70%;
+    left:40%
+}
+div{
+    text-align: center;
+}
+a{
+    color:white;
+}

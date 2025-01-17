@@ -56,7 +56,7 @@ types = {
     "Normal":0,
 
 }
-types["Water"] += 1
+
 keys = list(types.keys())
 for i in range(len(data_dict)):
     for c in range(len(keys)):
@@ -69,6 +69,7 @@ for i in range(len(data_dict)):
 def clean(string):
   import re
   string=str(string)
+  string=string.lower()
   cleaned =re.sub(r"[\([{})\]]","",string)
   #print(cleaned)
   cleaned = re.split(",",cleaned)
@@ -102,12 +103,11 @@ for i in range(len(data_dict)):
 color = ["#1552E2","#AB2021","#147B3D","#A9702C","#48180B","#1C4B27","#4A677D","#E3E32B","#86D2F5","#5F756D","#5E2D88","#448B95","#33336B","#040706","#971944","#994025","#A42A6C","#FAF9F6"]#defien each colour for each bar in hexcode
 
 
-y= []
+bar_chart_y= []
+bar_chart_x=[]
 for i in range(len(keys)):
-    y.append(types[keys[i]])
-x=[]
-for i in range(len(keys)):
-    x.append(keys[i])
+    bar_chart_y.append(types[keys[i]])
+    bar_chart_x.append(keys[i])
 
 standard_devetion_level=std(level_list)
 mean_level = mean(level_list)
@@ -117,8 +117,8 @@ mean_level = mean(level_list)
 
 import plotly.graph_objects as px
 bar_chart=px.Bar(
-    x=x 
-    ,y=y,
+    x=bar_chart_x 
+    ,y=bar_chart_y,
     marker=dict(color=color, 
                            line=dict(color='rgb(100,100,100)', 
                                      width=1))

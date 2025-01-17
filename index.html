@@ -28,116 +28,115 @@
 
 
 
-<h1> Investigation (approximately 400 words) </h1>
+<h1> Investigation</h1>
  <p>
 my first idea was to make a project using the different types of energy used for electrically in Ireland. The second idea i came up with was to use 
 a Pokémon dataset to find the base stat total and find which type had the highest mean value. third idea which is the one I went with is to use a 
 dataset containing Pokémon trainers and their Pokémon and find out the most common types and average level of Pokémon. I found this dataset on Kaggle
 <sup>[2]</sup>.I started by researching Pokémon levels I found an article on bulbapedia<sup>[1]</sup>I found out that Pokémon levels have a range of 1 to 100. 
 I then researched similar project I found someone who had made a similar project found this on reddit<sup>[3]</sup>, this project was similar  but it was
-only one game and was the frequency of Pokémon in trainers.  I researched Pokémon types, I learned that there are 20 types in the Pokémon games<sup>[4]</sup> 
-two of these types are not in the data because they are only used in the latest game, and the dataset was created 8 years ago.i researched what data 
-was in the data set. i found whst games where included in the data these are shown in fig.1. ones are in it in green and those in red are not in the data.
-(all games names shorten by removing teh pokemon prefix). to make this table i found a unqine trainer in the game form a walkthrough on bulbapedia<sup>[6]</sup> 
-and cross checked it to see if it was in the data. this data aslo includes rematchs that can be done after defeatting a trainer the frist time<sup>[5]</sup>.
-i aslo discovered that it does not inculde gym leader<sup>[7]</sup>,rivals<sup>[8]</sup>,elite four<sup>[9]</sup> and chanpions<sup>[10]</sup>. rivals are not included because their teams are 
+only one game and was the frequency of Pokémon in trainers.I researched Pokémon types, I learned that there are 20 types in the Pokémon games<sup>[4]</sup> 
+two of these types are not in the data because they are only used in the latest game, and the dataset was created 8 years ago.I researched what data was in the data set.
+ What games were included in the data shown in fig.1, The ones in it are green and those in red are not in the data.To make this table I found a unique trainer in the game from a walkthrough on bulbapedia<sup>[6]</sup> 
+ and cross checked it to see if it was in the data.This data also includes rematches that can be done after defeating a trainer the first time<sup>[5]</sup>.
+ I also discovered that it does not include gym leader<sup>[7]</sup>,rivals<sup>[8]</sup>,elite four<sup>[9]</sup> and champions<sup>[10]</sup>. rivals are not included because their teams are 
 dependent on what starter<sup>[11]</sup> you pick.
 	 <table style="width:70%" class="center">
 	  <tr>
 		<th colspan="6">fig.1 </th>
 	  </tr>
 	  <tr>
-		<td bgcolor="green">  red(japanese version)</td>
-		<td bgcolor="green"> green(japan exclusie)</td>
-		<td bgcolor="green">  blue(japanese version) </td>
-		<td bgcolor="red">  stadium(japan) </td>
-		<td bgcolor="green">  stadium </td>
+		<td bgcolor="green">Pokémon red(japan)</td>
+		<td bgcolor="green">Pokémon green(japan)</td>
+		<td bgcolor="green">Pokémon blue(japan)</td>
+		<td bgcolor="red"> Pokémon stadium(japan)</td>
+		<td bgcolor="green">Pokémon stadium </td>
 		
 	  </tr>
 	  <tr>
-		<td bgcolor="green">  red</td>
-		<td bgcolor="green">  blue </td>
-		<td bgcolor="green">  yellow </td>
-		<td bgcolor="green"> gold</td>
-		<td bgcolor="red">  stadium 2</td>
+		<td bgcolor="green">Pokémon red</td>
+		<td bgcolor="green">Pokémon  blue</td>
+		<td bgcolor="green">Pokémon yellow</td>
+		<td bgcolor="green">Pokémon gold</td>
+		<td bgcolor="red">Pokémon stadium 2</td>
 
 	  </tr>
 	  <tr>
 		
-		<td bgcolor="green">  sliver </td>
-		<td bgcolor="green"> crystal</td>
-		<td bgcolor="green"> ruby</td>
-		<td bgcolor="green">  sapphire </td>
-		<td bgcolor="red">  box ruby & sapphire </td>
+		<td bgcolor="green">Pokémon sliver</td>
+		<td bgcolor="green">Pokémon crystal</td>
+		<td bgcolor="green">Pokémon ruby</td>
+		<td bgcolor="green">Pokémon sapphire</td>
+		<td bgcolor="red">Pokémon box ruby & sapphire</td>
 	  </tr>
 	  <tr>
-		<td bgcolor="green">  emerald</td>
-		<td bgcolor="green"> leafgreen</td>
-		<td bgcolor="green">  firered </td>
-		<td bgcolor="green">  diamond</td>
-		<td bgcolor="green"> colosseum </td>
-		
+		<td bgcolor="green">Pokémon emerald</td>
+		<td bgcolor="green">Pokémon leafgreen</td>
+		<td bgcolor="green">Pokémon firered</td>
+		<td bgcolor="green">Pokémon diamond</td>
+		<td bgcolor="green">Pokémon colosseum</td>
+	
 	  </tr>
 	  <tr>
-		<td bgcolor="green" > pearl</td>
-		<td bgcolor="green">  platinum </td>
-		<td bgcolor="green">  heartgold</td>
-		<td bgcolor="green"> soulsilver</td>
-		<td bgcolor="green"> XD: gale of darkness </td>
+		<td bgcolor="green">Pokémon pearl</td>
+		<td bgcolor="green">Pokémon platinum </td>
+		<td bgcolor="green">Pokémon heartgold</td>
+		<td bgcolor="green">Pokémon soulsilver</td>
+		<td bgcolor="green">Pokémon XD: gale of darkness </td>
 		
 	  </tr>
 	  
 	  <tr>
 		
-		<td bgcolor="">  black</td>
-		<td bgcolor="">  white</td>
-		<td bgcolor=""> black 2</td>
-		<td bgcolor="">  white 2 </td>
-		<td bgcolor="red">  battle revoltuin </td>
+		<td bgcolor="green">Pokémon black</td>
+		<td bgcolor="green">Pokémon white</td>
+		<td bgcolor="green">Pokémon black 2</td>
+		<td bgcolor="green">Pokémon  white 2 </td>
+		<td bgcolor="red">Pokémon battle revoltuin </td>
 	  </tr>
 	  <tr>
 		
-		<td bgcolor="">  X</td>
-		<td bgcolor=""> Y</td>
-		<td bgcolor=""> omega ruby </td>
-		<td bgcolor="">  alpha sapphire</td>
-		<td bgcolor="red" > sun</td>
+		<td bgcolor="green">Pokémon X</td>
+		<td bgcolor="green">Pokémon Y</td>
+		<td bgcolor="green">Pokémon omega ruby </td>
+		<td bgcolor="green">Pokémon  alpha sapphire</td>
+		<td bgcolor="green" >Pokémon sun</td>
 		
 		
 		
 	
 	  </tr>
 	  <tr>
-		<td bgcolor="red">  moon </td>
-		<td bgcolor="red">  ultra sun</td>
-		<td bgcolor="red">  ultra moon</td>
-		<td bgcolor="red">  let's go pikachu! </td>
-		<td bgcolor="red">  let's go eevee!</td>
+		<td bgcolor="green">Pokémon moon </td>
+		<td bgcolor="red">Pokémon ultra sun</td>
+		<td bgcolor="red">Pokémon ultra moon</td>
+		<td bgcolor="red">Pokémon let's go pikachu! </td>
+		<td bgcolor="red">Pokémon let's go eevee!</td>
 	  </tr>
 	  <tr>
-		<td bgcolor="red" > sword</td>
-		<td bgcolor="red"> sheild</td>
-		<td bgcolor="red" > sword and sheild: the isle of armor</td>
-		<td bgcolor="red"> shining pearl</td>
-		<td bgcolor="red">  brillant diamond</td>
-		
-		
-	  </tr>
-	  <tr>
-		<td bgcolor="red">  legend arceus </td>
-		<td bgcolor="red">  scarlet</td>
-		<td bgcolor="red"> violet</td>
-		<td bgcolor="red">  scralet and violet: the teal mask </td>
-		<td bgcolor="red">  scralet and violet:the indigo disk</td>
+		<td bgcolor="red">Pokémon sword</td>
+		<td bgcolor="red">Pokémon sheild</td>
+		<td bgcolor="red">Pokémon sword and sheild: the isle of armor</td>
+		<td bgcolor="red">Pokémon shining pearl</td>
+		<td bgcolor="red">Pokémon brillant diamond</td>
 		
 		
 	  </tr>
 	  <tr>
-		<td bgcolor="red"> scralet and violet:mochi maythem</td>
+		<td bgcolor="red">Pokémon legend arceus </td>
+		<td bgcolor="red">Pokémon scarlet</td>
+		<td bgcolor="red">Pokémon violet</td>
+		<td bgcolor="red">Pokémon scralet and violet: the teal mask </td>
+		<td bgcolor="red">Pokémon scralet and violet:the indigo disk</td>
+		
+		
+	  </tr>
+	  <tr>
+		<td bgcolor="red">Pokémon scralet and violet:mochi maythem</td>
 		<td bgcolor="red">pokewalker</td>
-		<td bgcolor="red">  untie </td>
-		<td bgcolor="red">  master EX </td>
-		<td bgcolor="red"> magikarp jump</td>
+		<td bgcolor="red">Pokémon untie </td>
+		<td bgcolor="red">Pokémon master EX </td>
+		<td bgcolor="red">Pokémon magikarp jump</td>
 		
 	  </tr>
 	
@@ -165,7 +164,29 @@ dependent on what starter<sup>[11]</sup> you pick.
 
 <h1> Plan and design (approximately 400 words) </h1>
 
-	<p> </p>
+	<p> i start the plan by researching how i planned on cleaning and searching the data i decided on using the pandas read_csv and pop to read and remove colums that i dont need form the csv.<sup>[12]</sup>then using the write_to_csv to make a clean csv file to use.<sup><a href="#13">[13]</a></sup>
+    i tried using the csv module's dict writer<sup><a href="#14">[14]</a></sup> but that did not fit the data i was working with.i then reasearched dictonaries<sup><a href="#15">[15][16][17][18][19][20]</a></sup> to learn how they work so that i could use them for the type counts .i wrote psedueo code<sup>[21]</sup> for the algohrim 
+	i plan on using to clean see fig.2 and search the code see fig.3. i then made the frist draft of the flowchart of the code. i reasearched ploting librarys at frist i was going to use matplotlib<sup><a id="#22">[22]</a></sup> but i then found out about ploty<sup><a id="#23">[23]</a></sup> and decided to use it beacuse it has a appeling ui and build ine interactivly.
+    i spent a long time reasearching how to make a grpah in ploty and decided to make a histogram on the levels of the pokemon and a 
+	
+	<br>
+	<div class="row">
+		<div class = "image-box">
+	 <img src="clean_pseduo.jpg" alt="psedueo code for cleaning algohrim" style="width: 50%;";>
+		<div class="image-text-box fig2">
+			<h1>fig.2</h1>
+		</div>
+	    </div>
+	<div class = "image-box">	
+		<img  src="search_pseduo.jpg" alt="psedueo code for searching algohrim" style="width:50%";>
+	    <div class="image-text-box fig3">
+			<h1>fig.3</h1>
+		</div>
+	</div>
+	</div>
+	
+
+</p>
 
 <br>
 
@@ -189,30 +210,47 @@ dependent on what starter<sup>[11]</sup> you pick.
 <h1> References </h1>
 
 	<p id=sources>
-	   1.https://bulbapedia.bulbagarden.net/wiki/Level <br>
-	   2.https://www.kaggle.com/datasets/lrcusack/pokemontrainers/data <br>
-	   3.https://www.reddit.com/r/pokemon/comments/jeo6pn/i_made_a_graph_of_how_many_times_each_pokemon_is/ <br>
-	   4.https://bulbapedia.bulbagarden.net/wiki/Type<br>
-	   5.https://bulbapedia.bulbagarden.net/wiki/Rematch<br>
-	   6.https://bulbapedia.bulbagarden.net/wiki/Browse:Walkthroughs<br>
-	   7.https://bulbapedia.bulbagarden.net/wiki/Gym_Leader <br>
-	   8.https://bulbapedia.bulbagarden.net/wiki/Rival<br>
-	   9.https://bulbapedia.bulbagarden.net/wiki/Elite_Four#Indigo_Elite_Four<br>
-	   10.https://bulbapedia.bulbagarden.net/wiki/Pok%C3%A9mon_Champion<br>
-	   11.https://bulbapedia.bulbagarden.net/wiki/First_partner_Pok%C3%A9mon<br>
+	   <div id= "1">1.<a href=https://bulbapedia.bulbagarden.net/wiki/Level >https://bulbapedia.bulbagarden.net/wiki/Level</a></div>
+	   <div id= "2">2.<a href=https://www.kaggle.com/datasets/lrcusack/pokemontrainers/data>https://www.kaggle.com/datasets/lrcusack/pokemontrainers/data</a> </div>
+	   <div id= "3">3.<a href=https://www.reddit.com/r/pokemon/comments/jeo6pn/i_made_a_graph_of_how_many_times_each_pokemon_is/ >https://www.reddit.com/r/pokemon/comments/jeo6pn/i_made_a_graph_of_how_many_times_each_pokemon_is/</a> </div>
+	   <div id= "4">4.<a href=https://bulbapedia.bulbagarden.net/wiki/Type>https://bulbapedia.bulbagarden.net/wiki/Type</a></div>
+	   <div id= "5">5.<a href=https://bulbapedia.bulbagarden.net/wiki/Rematch>https://bulbapedia.bulbagarden.net/wiki/Rematch</a></div>
+	   <div id= "6">6.<a href=https://bulbapedia.bulbagarden.net/wiki/Browse:Walkthroughs>https://bulbapedia.bulbagarden.net/wiki/Browse:Walkthroughs</a></div>
+	   <div id= "7">7.<a href=https://bulbapedia.bulbagarden.net/wiki/Gym_Leader >https://bulbapedia.bulbagarden.net/wiki/Gym_Leader </a></div>
+	   <div id= "8">8.<a href=https://bulbapedia.bulbagarden.net/wiki/Rival>https://bulbapedia.bulbagarden.net/wiki/Rival</a></div>
+	   <div id= "9">9.<a href=https://bulbapedia.bulbagarden.net/wiki/Elite_Four#Indigo_Elite_Four>https://bulbapedia.bulbagarden.net/wiki/Elite_Four#Indigo_Elite_Four</a></div>
+	   <div id= "10">10.<a href=https://bulbapedia.bulbagarden.net/wiki/Pok%C3%A9mon_Champion>https://bulbapedia.bulbagarden.net/wiki/Pok%C3%A9mon_Champion</a></div>
+	   <div id= "11">11.<a href=https://bulbapedia.bulbagarden.net/wiki/First_partner_Pok%C3%A9mon>https://bulbapedia.bulbagarden.net/wiki/First_partner_Pok%C3%A9mon</a></div>
+	   <div id= "12">12. <a href=https://www.geeksforgeeks.org/delete-a-csv-column-in-python/ >https://www.geeksforgeeks.org/delete-a-csv-column-in-python/ </a>~~~~source used for removing data form a csv</div>
+	   <div id= "13">13.<a href=https://stackoverflow.com/questions/67847243/how-to-write-back-the-result-to-the-csv-file-using-pandas-without-replace-the-ex>https://stackoverflow.com/questions/67847243/how-to-write-back-the-result-to-the-csv-file-using-pandas-without-replace-the-ex </a>solution to previous cleaning problem</div>
+	   <div id= "14">14.<a href=https://www.geeksforgeeks.org/writing-csv-files-in-python/ > https://www.geeksforgeeks.org/writing-csv-files-in-python/</a> a source for making new csv it did not work so did more reasearch</div>
+	   <div id= "15">15.<a href=https://www.w3schools.com/python/python_dictionaries.asp>https://www.w3schools.com/python/python_dictionaries.asp</a></div>
+	   <div id= "16">16.<a href=https://www.w3schools.com/python/python_dictionaries_access.asp>https://www.w3schools.com/python/python_dictionaries_access.asp</a></div>
+	   <div id= "17">17.<a href=https://www.w3schools.com/python/python_dictionaries_change.asp>https://www.w3schools.com/python/python_dictionaries_change.asp</a></div>
+	   <div id= "18">18.<a href=https://www.w3schools.com/python/python_dictionaries_add.asp>https://www.w3schools.com/python/python_dictionaries_add.asp</a></div>
+	   <div id= "19">19.<a href=https://www.w3schools.com/python/python_dictionaries_remove.asp>https://www.w3schools.com/python/python_dictionaries_remove.asp</a></div>
+	   <div id= "20">20.<a href=https://www.w3schools.com/python/python_dictionaries_methods.asp>https://www.w3schools.com/python/python_dictionaries_methods.asp</a></div>
+	   <div id= "21">21.<a href=https://www.geeksforgeeks.org/how-to-write-a-pseudo-code/ >https://www.geeksforgeeks.org/how-to-write-a-pseudo-code/</a></div>
 
 
-	   https://www.w3.org/TR/html401/present/styles.html to link a css file
-	   https://www.w3schools.com/css/css_background.asp background
-	   https://www.w3schools.com/howto/howto_css_table_center.asp center table
-		 https://www.geeksforgeeks.org/delete-a-csv-column-in-python/ ~~~~source used for removing data form a csv
-		 https://www.geeksforgeeks.org/writing-csv-files-in-python/ a source for making new csv it did not work so did more reasearch
-		 https://stackoverflow.com/questions/67847243/how-to-write-back-the-result-to-the-csv-file-using-pandas-without-replace-the-ex solution to previous cleaning problem
-		 https://plotly.com/python/axes/#disabling-panzoom-on-axes-fixed-range step 1 to disbale leaving graph.
-		 https://plotly.com/python/configuration-options/ step 2
-		 https://plotly.com/python/interactive-html-export/ used to export into html
-		 https://stackoverflow.com/questions/63700151/finding-string-in-txt-file-and-delete-it part of js plot fix
-		 https://softhints.com/python-string-remove-last-n-characters/ text editing helphttps://docs.python.org/3/library/stdtypes.html#text-sequence-type-str
+
+
+	   <div id= ""><a href=https://www.w3schools.com/tags/tag_a.asp>https://www.w3schools.com/tags/tag_a.asp</a> making this sick References thank you S</div>
+	   <div id= ""><a href=https://docs.python.org/3/library/re.html>https://docs.python.org/3/library/re.html</a>split </div>
+	   <div id= ""><a href=https://www.w3.org/TR/html40/present/styles.html>https://www.w3.org/TR/html40/present/styles.html</a>to link a css file</div>
+	   <div id= ""><a href=https://www.w3schools.com/css/css_background.asp>https://www.w3schools.com/css/css_background.asp</a> background</div>
+	   <div id= ""><a href=https://www.w3schools.com/html/html_images.asp>https://www.w3schools.com/html/html_images.asp</a> images</div>
+	   <div id= ""><a href=https://www.geeksforgeeks.org/html-img-align-attribute/ >https://www.geeksforgeeks.org/html-img-align-attribute/ </a>algining images</div>
+	   <div id= ""><a href=https://www.w3schools.com/howto/howto_css_images_side_by_side.asp >https://www.w3schools.com/howto/howto_css_images_side_by_side.asp  </a> more algining </div>
+	   <div  id= ""><a href=https://www.w3schools.com/howto/howto_css_image_text_blocks.asp>https://www.w3schools.com/howto/howto_css_image_text_blocks.asp </a> image text</div>
+	   <div id= ""><a href=https://www.w3schools.com/howto/howto_css_image_text.asp>https://www.w3schools.com/howto/howto_css_image_text.asp</a> image text 2 electrict boogaloo</div>
+	   <div id= ""><a href=https://www.w3schools.com/howto/howto_css_table_center.asp>https://www.w3schools.com/howto/howto_css_table_center.asp</a> center table</div>
+	   <div id= ""><a href=https://plotly.com/python/axes/#disabling-panzoom-on-axes-fixed-range>https://plotly.com/python/axes/#disabling-panzoom-on-axes-fixed-range </a> step 1 to disbale leaving graph.</div>
+	   <div id= ""><a href=https://plotly.com/python/configuration-options/ >https://plotly.com/python/configuration-options/ </a>step 2</div>
+	   <div id= ""><a href=https://plotly.com/python/interactive-html-export/ >https://plotly.com/python/interactive-html-export/ </a>used to export into html</div>
+	   <div id= ""><a href=https://stackoverflow.com/questions/63700151/finding-string-in-txt-file-and-delete-it>https://stackoverflow.com/questions/63700151/finding-string-in-txt-file-and-delete-it </a> part of js plot fix</div>
+	   <div id= ""><a href=https://softhints.com/python-string-remove-last-n-characters/ >https://softhints.com/python-string-remove-last-n-characters/</a>text editing help</div>
+	   <div id= ""><a href=https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str character removing</a></div>
 		</p>
 
 <br>
@@ -223,7 +261,7 @@ dependent on what starter<sup>[11]</sup> you pick.
 
 
 <h1> Summary word count </h1>
-	<table style="width:25%">
+	<table style="width:25%" class=" center">
 	  <tr>
 		<th>Section</th>
 		<th>Word count</th>
@@ -234,7 +272,7 @@ dependent on what starter<sup>[11]</sup> you pick.
 	  </tr>
 	  <tr>
 		<td>2. Investigation </td>
-		<td >[ ]</td>
+		<td >439</td>
 	  </tr>
 	  <tr>
 		<td>3. Plan and design </td>

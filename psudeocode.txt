@@ -1,28 +1,22 @@
-import modules
-csv is read and cleaned 
-cleaned data is write into new csv
-
-cleaned csv is read into data
-Initialize Data Structures
- types defiend as a dict without count
- empty list for levels
-
-data cleaned 
- funcion
-  loop
+Initialize a dictionary(types)
+extract keys and store them in a list
+ilerate through each line of the csv
+for each line 
+ convert to lowercase
+ ilerate through the list of keys
+ for each key
+  if key in line
+   dictonary of key increase by 1
 
 
-data searched and types counted
- loop 
-  if type in data{loop count}
-   added into corresponing type in the dict
 
 
-colors defined
-data searched and levels added to a list
-funcion
- loop 
-   loop
-type count and types ploted on a barchart
+
+
+function takes in a string
+ string is turned into a string
+ string is turned lowercase
+ removes all the string that is not the level
+ returns the level
+
  
-levels are put into a histogram.

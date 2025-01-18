@@ -10,9 +10,6 @@ for each line
 
 
 
-
-
-
 function takes in a string
  string is turned into a string
  string is turned lowercase

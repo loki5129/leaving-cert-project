@@ -1,6 +1,7 @@
 from pandas import *
-from numpy import *
-
+import plotly.graph_objects as px
+from jinja2 import Template
+import re
 #csv file name
 oginal_filename = r"C:\Users\student\Downloads\leaving-cert-project-main\leaving-cert-project-main\Pokemon.csv"
 #section  of code resolving cleaning the csv file
@@ -67,7 +68,7 @@ for i in range(len(data_dict)):
 #print(types)
 
 def clean(string):
-  import re
+  
   string=str(string)
   string=string.lower()
   cleaned =re.sub(r"[\([{})\]]","",string)
@@ -109,13 +110,12 @@ for i in range(len(keys)):
     bar_chart_y.append(types[keys[i]])
     bar_chart_x.append(keys[i])
 
-standard_devetion_level=std(level_list)
-mean_level = mean(level_list)
 
 
 
 
-import plotly.graph_objects as px
+
+
 bar_chart=px.Bar(
     x=bar_chart_x 
     ,y=bar_chart_y,
@@ -196,9 +196,9 @@ fig.update_layout(
             showactive=True,
         )
     ],
-    title="frewqunecy that types of pokemon appear in trainers",
+    title="frequency that types of pokemon appear in trainers",
     margin=dict(l=50, r=50, t=50, b=120), 
-    xaxis_title="tpyes of pokemon",
+    xaxis_title="types of pokemon",
     yaxis_title="Frequency",
           )    
 fig.update_xaxes(fixedrange=True)
@@ -215,14 +215,14 @@ config = {
 }
 
 #fig.show(config=config)
-from jinja2 import Template
+
 
 
 
 output_js_path=r"plot.js"
 input_templatejs_path = r"template.js"
 plotly_jinja_data = {"fig":fig.to_html(full_html=False,include_plotlyjs=False,include_mathjax=False,default_height=800,config=config)}
-#consider also defining the include_plotlyjs parameter to point to an external Plotly.js as described above
+
 
 with open(output_js_path, "w", encoding="utf-8") as output_file:
     with open(input_templatejs_path) as template_file:

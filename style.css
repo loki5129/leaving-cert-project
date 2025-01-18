@@ -2,12 +2,14 @@ table, th, td {
     border: 1px solid black;
   
   }
-  td{
-      text-align: center;
-  }
+  
 
-p,h1{
+p,h1,td,div{
     text-align: center;
+}
+h2{
+    font-size:larger ;
+    text-align: center
 }
 body{
     background-color:black;
@@ -52,9 +54,11 @@ body{
     top:70%;
     left:40%
 }
-div{
-    text-align: center;
-}
+
 a{
     color:white;
+}
+ul{
+    display: inline-block;
+    text-align: left
 }

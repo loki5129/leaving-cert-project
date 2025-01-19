@@ -3,9 +3,10 @@ import plotly.graph_objects as px
 from jinja2 import Template
 import re
 #csv file name
-oginal_filename = r"C:\Users\student\Downloads\leaving-cert-project-main\leaving-cert-project-main\Pokemon.csv"
+oginal_filename = r"Pokemon.csv"
 #section  of code resolving cleaning the csv file
 raw_data = read_csv(oginal_filename)
+raw_data.to_html("table2.html",index=False)
 #print(raw_data)
 raw_data.pop("place")
 #print(raw_data)
@@ -238,13 +239,16 @@ lines=lines[215:-48]
 
 with open(output_js_path,"w")as f:
     f.write(lines)
+'''
 
-
-input_html_path = r"template.html"
-output_html_path = r"index_graph.html"
+input_html_path = r"index.html"
+output_html_path = r"index.html"
 
 plotly_jinja_data = {"fig":div}
 with open(output_html_path, "w", encoding="utf-8") as output_file:
     with open(input_html_path) as template_file:
         j2_template = Template(template_file.read())
         output_file.write(j2_template.render(plotly_jinja_data))
+'''
+
+data.to_html("table.html",index=False) 

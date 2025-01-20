@@ -239,7 +239,7 @@ lines=lines[215:-48]
 
 with open(output_js_path,"w")as f:
     f.write(lines)
-'''
+
 
 input_html_path = r"index.html"
 output_html_path = r"index.html"
@@ -249,6 +249,6 @@ with open(output_html_path, "w", encoding="utf-8") as output_file:
     with open(input_html_path) as template_file:
         j2_template = Template(template_file.read())
         output_file.write(j2_template.render(plotly_jinja_data))
-'''
+
 
 data.to_html("table.html",index=False) 

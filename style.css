@@ -3,6 +3,9 @@ table, th, td {
   
   }
 
+button{
+    padding: 10px 10px;
+}
 
 p,h1,td,div{
     text-align: center;
@@ -66,4 +69,7 @@ a{
 ul{
     display: inline-block;
     text-align: left
+}
+.nocenter{
+ text-align: left;
 }

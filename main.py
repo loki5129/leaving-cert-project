@@ -216,7 +216,7 @@ config = {
 }
 
 #fig.show(config=config)
-
+'''
 
 
 
@@ -252,3 +252,6 @@ with open(output_html_path, "w", encoding="utf-8") as output_file:
 
 
 data.to_html("table.html",index=False) 
+'''
+trianer = read_csv("Trainers.csv")
+trianer.to_html("table2.html",index=False)

@@ -6,7 +6,7 @@ import re
 oginal_filename = r"Pokemon.csv"
 #section  of code resolving cleaning the csv file
 raw_data = read_csv(oginal_filename)
-raw_data.to_html("table2.html",index=False)
+
 #print(raw_data)
 raw_data.pop("place")
 #print(raw_data)
@@ -216,7 +216,7 @@ config = {
 }
 
 #fig.show(config=config)
-'''
+
 
 
 
@@ -241,8 +241,8 @@ with open(output_js_path,"w")as f:
     f.write(lines)
 
 
-input_html_path = r"index.html"
-output_html_path = r"index.html"
+input_html_path = r"template.html"
+output_html_path = r"graph.html"
 
 plotly_jinja_data = {"fig":div}
 with open(output_html_path, "w", encoding="utf-8") as output_file:
@@ -251,7 +251,3 @@ with open(output_html_path, "w", encoding="utf-8") as output_file:
         output_file.write(j2_template.render(plotly_jinja_data))
 
 
-data.to_html("table.html",index=False) 
-'''
-trianer = read_csv("Trainers.csv")
-trianer.to_html("table2.html",index=False)

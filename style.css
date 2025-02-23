@@ -8,7 +8,7 @@ button{
     padding: 10px 10px;
 }
 
-p,h1,td,div{
+p,h1,td,div,ul,li{
     text-align: center;
 }
 h2{
@@ -71,7 +71,7 @@ ul{
     display: inline-block;
     text-align: left
 }
-.nocenter{
+.nocenter,.result{
  text-align: left;
 }
 

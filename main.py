@@ -1,5 +1,5 @@
 from pandas import *
-import plotly.graph_objects as px
+import plotly.graph_objects as go
 from jinja2 import Template
 import re
 #csv file name
@@ -7,26 +7,10 @@ oginal_filename = r"Pokemon.csv"
 #section  of code resolving cleaning the csv file
 raw_data = read_csv(oginal_filename)
 
-#print(raw_data)
-raw_data.pop("place")
-#print(raw_data)
-raw_data.pop("type2")
-#print(raw_data)
-raw_data.pop("hp")
-#print(raw_data)
-raw_data.pop("maxhp")
-#print(raw_data)
-raw_data.pop("attack")
-#print(raw_data)
-raw_data.pop("defense")
-#print(raw_data)
-raw_data.pop("spatk")
-#print(raw_data)
-raw_data.pop("spdef")
-#print(raw_data)
-raw_data.pop("speed")
-#print(raw_data)
-
+ 
+to_remove=["place","type2","hp","maxhp","attack","defense","spatk","spdef","speed"]
+ 
+raw_data.drop(columns=to_remove,inplace=True)
 raw_data.to_csv("cleaned_data.csv",index=False)
 filename = "cleaned_data.csv"
 
@@ -45,7 +29,6 @@ types = {
     "Bug":0,
     "Flying":0,
     "Electric":0,
-    "Bug":0,
     "Ice":0,
     "Steel":0,
     "Poison":0,
@@ -117,29 +100,33 @@ for i in range(len(keys)):
 
 
 
-bar_chart=px.Bar(
+bar_chart=go.Bar(
     x=bar_chart_x 
     ,y=bar_chart_y,
+    name ="",
     marker=dict(color=color, 
                            line=dict(color='rgb(100,100,100)', 
-                                     width=1))
+                                     width=1),),  
+    xperiodalignment="middle",
+    xhoverformat="Q%q",
+    hovertemplate="<b>Type: </b>%{x}<br><b>Count: </b>%{y}"
     )
  
 
 
 
-histogram=px.Histogram(
+histogram=go.Histogram(
     x=level_list,
-    histnorm="probability density",
+    histnorm="percent",
     nbinsx=10,
+    name ="",
     marker=dict(
         line=dict(color='rgb(100,100,100)',
-                  width=1)
+                  width=1)),
+    xhoverformat="Q%q",
+    hovertemplate="<b>Probability: </b>%{y}% "
     )
-    
-    
-    )
-fig=px.Figure() 
+fig=go.Figure() 
 fig.add_trace(bar_chart)
 fig.add_trace(histogram)
 
@@ -171,7 +158,7 @@ fig.update_layout(
                                "title": "Types of Pokémon"
                             },
                             "yaxis":{
-                                "title": "frequncey"
+                                "title": "Frequency"
                             }
                              },
                     ],
@@ -188,7 +175,7 @@ fig.update_layout(
                                 "title": "Levels of Pokémon",  
                             } ,
                             "yaxis":{
-                                "title": "probality of level occuring",
+                                "title": "Probability of level occuring",
                             }
                         },
                     ],
@@ -197,7 +184,7 @@ fig.update_layout(
             showactive=True,
         )
     ],
-    title="frequency that types of pokemon appear in trainers",
+    title="Frequency that types of pokemon appear in trainers",
     margin=dict(l=50, r=50, t=50, b=120), 
     xaxis_title="types of pokemon",
     yaxis_title="Frequency",

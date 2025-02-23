@@ -8,14 +8,13 @@
 <title> Coursework report </title>
 <LINK href="style.css" rel="stylesheet" type="text/css">
 
-<script src="https://cdn.plot.ly/plotly-2.35.2.min.js" charset="utf-8"></script>
-<script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+
 <script src="plot.js" defer></script>
 </head>
 
 
 <body>
-<a href="raw_table.html"><button type="button" >raw data</button></a> <a href="clean_table.html"><button type="button">cleaned data</button></a> <a href="index_graph.html"><button>form</button></a> <a href="graph.html"><button>graph</button></a>
+<a href="raw_table.html"><button type="button" >raw data</button></a> <a href="clean_table.html"><button type="button">cleaned data</button></a> <a href="form.html"><button>form</button></a> <a href="graph.html"><button>graph</button></a>
 
 <h1> Meeting the brief (max 400 words) </h1>
 
@@ -156,14 +155,14 @@ dependent on what starter<sup><a href="#11">[11]</a></sup> you pick.
     i spent a long time reasearching how to make a grpah in ploty using the graph_object libary<sup><a href="#24">[24]</a></sup> i decided to use this beacause it can make figures and make dropdown menus. i decided to make a histogram<sup><a href="#25">[25]</a></sup> on the levels 
 	of the pokemon and a bar chart<sup><a href="#26">[26]</a></sup> for the types. i will use the ploty graph_object libary to make a dropdownmeunu<sup><a href="#27">[27]</a></sup> for the graphs so that it can swap between them. this will use trace graphs<sup><a href="#27">[27]</a></sup>
 	and making one visible and invisble depaneding on the stat of the dropdown bar.  
-	i will be using visual studio code with the python exstention.
+	i will be using visual studio code with the python exstention. i will use github to store
 	i used the pylance module mangener to get modules for python. the modules i will use are:
 	<h2>python modules</h2>
 <div>
 	<ul>
 		<li>pandas: for reading and editing data </li>
 	    <li>ploty:speficaly the graph_object libary for making the grpahs and the dropdown bar and export it into js</li>
-		<li>jinja2: i only used the template function</li>
+		<li>jinja2: i will use to place the graph into a javascpirt file using the template function</li>
 	</ul>
 </div>
     <h2>javascpirt modules</h2>
@@ -225,27 +224,133 @@ dependent on what starter<sup><a href="#11">[11]</a></sup> you pick.
 <h1> Create (approximately 1000 words) </h1>
 
 	<p> 
-	i start by import all the module i will need for the project, pandas for reading and cleaning the csv. plotly_graph objects for making the graphs and jinja2 for the template function. i started by using pandas's read_csv function to read the csv so it can be edited in python.
+	<!----i start by import all the module i will need for the project, pandas for reading and cleaning the csv. plotly_graph objects for making the graphs and jinja2 for the template function to place the export graphs into javascpirt. i started by using pandas's read_csv function to read the csv so it can be edited in python.
 	i then used pandas pop to remove all the columns that i did not need, after each column is remove i printed the data to test if the data removed is correctly. then i wrote this cleaned data into a new csv using the write_to_csv function and named it clean_data.csv. i then used 
 	the read function agian to read the clean data.i then used pandas's data_to_dict function to turn the data into what i thought would be a ditonary but it was just a list with each row of the csv as an element in the list. i still used this because it worked for a test loop.
-	i then made a dictonary for each type of pokemon and set the value to 0 and a null list for levels of the pokemon and extract the keys of the dict. i then used a for loop to loop through each elenment i the list of the data inside there a nested for loop that loops
+	i then made a dictonary for each type of pokemon and set the value to 0 and a null list for levels of the pokemon and extracted the keys of the dict. i then used a for loop to loop through each elenment in the list of the data inside there a nested for loop that loops
 	through each key of the dictonary and checks if the key is in the element of the list if it is it adds 1 to the value of the key.this is done until it reachs the end of both loops. then i made a function to return the level an element of the list. this dunction took in the string.
-	turn it into a string to esure that it works.i then used the built in lower function to ensure that the later cleaning works. then i used the re fucntion to remove brackets from the string.i then used the re module to split the string into a list spliting it at each comma. 
+	turned it into a string to esure that it works.i then used the built in lower function to ensure that the later cleaning works. then i used the re fucntion to remove brackets from the string.i then used the re module to split the string into a list spliting it at each comma. 
     then i removed the first 2 element for the list and the last element. i turned the list back in a string using the built function. then "pokelevel" is removed from the string and used the re sub function to remove brackets. and re replace to remove commas. then used the int 
 	function to turn the string into a int and return that value. after each step in cleaning i placed a print statment to ensure all the steps worked correctly. i then made a for loop in the range of the number of elements in the list that uses the clean function to get the level 
-	and then appends it into the empty level list. 
+	and then appends it into the empty level list. i then defined each colour in hex in a list i got this colour for the image shown in fig.5  i used microsoft paints colour picker tool to get the hexcode and used that as the colour. i then created two empty list for the x and y of the bar chart called bar_chart_y and bar_chart_x.
+	i then made a for loop that loops for each key in the types dictonary. for each key it appends the key to bar_chart_x and appends the value of the dictonary for the key into the bar_chart_y list. the bar chart is then created using the the Bar fucntion with the x as the bar_chart_x list and y as the bar_chart_y list and the colour as the colour list
+	and gave it an black outline. i then used the histogram fucntion form ploty graph_object to make a histogram with the level_list as the x and use the histnorm as probility density and the distance between the x labels as 10 and gave it a black outline.
+	i then used the ploty graph_object function figure to create a figure called fig and then using the add_trace function to add the bar and the histogram as traces to the figure and then used the ploty graph_objects function update traces to set the histogram visble to fasle and set the defualt visible as the bar chart.
+	i then used the ploty graph_objects update_layout to update the menu to create a dropdown menu that for each button makes the other graph invisble and makes the graph corresponding to the button visible and adds the corresponding title and axis labels. i then defined the config to remove the logo and remove all the buttons on the bar that i was not using.-->
+  
+	<table>
+ <tr>
+	<th>week</th>
+	<th>tasks</th>
+</tr>
+	<td>week 1</td>
+	<td>
+	<ul>
+		<li>i reasearched data sets and chose the dataset i will use</li>
+		<li> started reasearching  data i would need for the project</li>
+		<li>started writng the Investigation and design</li>
+		<li> used pandas pop and read_csv to read and clean the data </li>
+	</ul>
+</td>
+<tr>
+	<td>week 2</td>
+	<td>
+	<ul>
+		<li>used pandas to_csv function to write the cleaned data to a new csv file</li>
+		<li>researched dictonaries</li>
+		<li>wrote a dictonary to store how many times each type occurs </li>
+		<li>wrote a for loop to get how many times each occurs</li>
+	</ul>
+</td>
+</tr>
+
+<tr>	
+	<td>week 3 </td>
+	<td>
+	<ul>
+		<li>researched ploty graph libary</li>
+		<li>wrote a function using re module to get the level from a row of the data </li>
+		<li>wrote a for loop to get the level of every pokemon and append in a list</li>
+		<li>used the microsoft paint colour picker to get the hexcode of each type and put it in a list for the bar chart</li>
+
+	</ul></tr>
+<tr>	
+	<td>week 4</td>
+	<td>
+	<ul>
+		<li>using a for loop to create a list of keys of y and count of each tpye of x</li>
+		<li>using the ploty graph_objects libary i used the x as the count of types and y as the name of each tpye made a bar chart </li>
+		<li>add a black outline and fixed the hover template</li>
+		<li>using a for loop to create a list of keys of y and count of each tpye of x</li>
+			</ul></tr>
+<tr>	
+	<td>week 5</td>
+	<td>
+	<ul>
+		<li>using the ploty graph_objects libary i used the x as the count of types and y as the name of each tpye made a bar chart </li>
+		<li>add a black outline and fixed the hover template</li>
+		<li>using the graph objects libary i made a histogram using the list of levels</li>
+		<li> add a black outline and fixed the hover template</li>
+	</ul></tr>
+<tr>	
+	<td>week 5</td>
+	<td>
+	<ul>
+		<li>reasearched how to make a a dropdown menu in the ploty libary</li>
+		<li>made a figure and add the graphs to it as traces and set the default visble as bar chart</li>
+		<li>using the updatemenus function made a dropdown menu to swap the visblably of traces between the bar chart and the histogram</li>
+		<li>labeled  graphs and axis and so that they change according to what graph is visble</li>
+	</ul></tr>
+<tr>	
+	<td>week 6</td>
+	<td>
+	<ul>
+		<li>removed the logo and all the buttons that are not in use and applied the config</li>
+		<li>researched how to export the intreactive graph to html</li>
+		<li>tested the to_html function which crashed the vscode editor when opened</li>
+		<li>added the condiotons full_html, include_plotyjs and include_mathjax to fasle and defualt height to 800</li>
+	</ul></tr>
+<tr>	
+	<td>week 7</td>
+	<td>
+	<ul>
+		<li>using jinja2's template to write it into a javascpirt file</li>
+		<li>i then removed the frist 148 characters which contains the div and id that the graph is sent to.</li>
+		<li>using jinja2 i wrote the div to a html file in place of {{fig}}</li>
+		<li>i removed the last 48 character and wrote it to a javascpirt file to use in the html</li>
+	</ul></tr>
+<tr>	
+	<td>week 8</td>
+	<td>
+	<ul>
+		<li>tested this by running the program mutliple times</li>
+		<li>i reasearched javascpirt forms and css sytling</li>
+		<li>made a basic form as a base for the main form</li>
+		<li>wrote a function to take in a file to write the form to</li>
+	</ul></tr>
+<tr>	
+	<td>week 9</td>
+	<td>
+	<ul>
+		<li>resalied that the form i wrote was not working so i rewrote it using arrays</li>
+		<li>i wrote a fucntion to check if the all the boxes are filled</li>
+		<li>i wrote logic to ensure that no invalied inputs are placed in the form</li>
+		<li>i wrote a fucntion to submit the data and place it in a database</li>
+	</ul></tr> 
+<tr>	
+	<td>week 10</td>
+	<td>
+	<ul>
+		<li>wrote a fucntion to show the database to test to submit function</li>
+		<li>wrote a function to show the database as a table </li>
+		<li>wrote logic to give intreption of the user enter data</li>
+		<li>cleaned and comment code</li>
+	</ul></tr>
+</table>
 
 
 
-
-
-
-
-
-
-
-
-
+	<!--<img src="PokemonTypes.png" alt="iamge used to get colors for each type" style="width: 50%;";>-->
 
 	</p>
 

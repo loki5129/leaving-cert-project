@@ -5,6 +5,7 @@
     <title>form</title>
     <script src="form.js"></script>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="icon.ico">
 </head>
 <body>
         <a href="index.html"><button>home</button> <br></a>
@@ -23,8 +24,9 @@
 
 
 </form>
-<button type="button" onclick="testFormSubmission()">Run Test</button>
-<button onclick=table() id="analysis_button">show table</button><!--analysis()-->
+<button type="button" onclick="full_record()">Run Test</button>
+<button onclick=table(),analysis() id="analysis_button">show table</button>
+<button onclick=clear_database()>clear users</button>
 <div id="result"></div>
 </body>
 </html>

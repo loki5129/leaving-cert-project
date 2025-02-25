@@ -52,15 +52,18 @@ function clear_database(){
 function submitData() {
  let userdata1 = []
  let username = document.getElementById('username').value;
- let age = document.getElementById('age').value;
+ let age = Number(document.getElementById('age').value);
+ console.log(age)
  if (!username) {
    alert("Please enter a username");
    return;
  }else {
     userdata1.push(username);
   }
- if (!age || age<0 && age>111){
+ if (!age || age<0 ||age>111){
+   alert("enter vaild age")
    return;
+
  }else{
   userdata1.push(Number(age));
   
@@ -69,8 +72,10 @@ function submitData() {
  const checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
  if (checkboxes.length === 0) {
    alert("Please select at least one checkbox");
+   return
  }else if (checkboxes.length > 1) {
   alert("Please select only one checkbox");
+  return
  }else {
   userdata1.push(checkboxes[0].value === "True" ? true : false);
   }
@@ -136,6 +141,7 @@ function table(){
     let text = document.createTextNode(i + 1);
     cell.appendChild(text);
     row.appendChild(cell);
+
     let data = [user.name,user.age,user.state];
     data.forEach(element =>{
       let cell = document.createElement("TD")
@@ -153,25 +159,19 @@ function clear_table(){
 
 
 function analysis() {
-  /*if(userdata[1] == null||userdata[1]=="" ||userdata[1]==undefined|| typeof(userdata[1])==undefined){
-    alert("missing requird data")
-  }else{
-   if (userdata[1][2]===false) {
-      var result = "Pokémon might not be your thing, but you could still enjoy the games or anime!";
-   }else {
-    var age =userdata[1][1]
-    if (age < 10) {
-      result= "You might enjoy starting with Pikachu or Eevee!";
-    } else if (age <= 15 && age > 10) {
-      result="You could try training classic starters like Charmander, Squirtle, or Bulbasaur.";
-    } else if (age <= 25) {
-     result= "Consider competitive battling with Pokémon like Garchomp or Aegislash.";
-    } else {
-     result= "You might appreciate strategy-based Pokémon like Metagross or Tyranitar.";
-    }
-    document.getElementById("result").innerHTML = result
-    document.getElementById("analysis_button").disabled = true;
+  let users = JSON.parse(localStorage.getItem("userdata"))
+  console.log(users)
+  
+  users_age = 0
+  for (element in users){
+    users_age +=Number((users[element].age))
   }
-  }*/
+
+  let user_count= users.length
+  let average_age = users_age/user_count
+  console.log("Total Age:", users_age);
+  console.log("User Count:", user_count);
+  console.log("Average Age:", average_age);
+ 
 }
 

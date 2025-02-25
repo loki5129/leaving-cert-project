@@ -9,13 +9,13 @@
 </head>
 <body>
         <a href="index.html"><button>home</button> <br></a>
-    
+<div class="for">    
 <form id="feedback form">
         <label for="username">Username:</label>
         <input type="text" id="username" name="username"><br>
         <label for="age">Age:</label>
-        <input type="number" id="age" name="age"><br>
-        <div class="nocenter">do you like pokemon.</div>
+        <input type="number" id="age" name="age" class="number"><br>
+        <div>do you like pokemon.</div>
         <label>True:</label>
         <input type="checkbox" name="True" value="True"><br>
         <label>False:</label>
@@ -24,6 +24,7 @@
 
 
 </form>
+</div>
 <button type="button" onclick="full_record()">Run Test</button>
 <button onclick=table(),analysis() id="analysis_button">show table</button>
 <button onclick=clear_database()>clear users</button>

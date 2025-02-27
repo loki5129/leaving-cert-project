@@ -2,6 +2,7 @@ from pandas import *
 import plotly.graph_objects as go
 from jinja2 import Template
 import re
+from statistics import mean,median,mode
 #csv file name
 oginal_filename = r"Pokemon.csv"
 #section  of code resolving cleaning the csv file
@@ -94,7 +95,18 @@ for i in range(len(keys)):
     bar_chart_y.append(types[keys[i]])
     bar_chart_x.append(keys[i])
 
-
+stat_type_list ={
+    "mean":mean(bar_chart_y),
+    "median":median(bar_chart_y),
+    "range":max(bar_chart_y)-min(bar_chart_y),
+    "mode":mode(bar_chart_y)
+}
+stat_level_list ={
+    "mean":mean(level_list),
+    "median":median(level_list),
+    "range":max(level_list)-min(level_list),
+    "mode":mode(level_list)
+}
 
 
 
@@ -147,47 +159,76 @@ fig.update_layout(
                     label="Bar chart",
                     method="update",
                     args=[
-                        {"visible": [True, False]},  # Show histogram, hide bar chart
+                        {"visible": [True, False]},  
                         {
                             "title": "Bar Chart of types of pokemon found in trainers",
-                            
-                            
-                            "xaxis":{
-                               "dtick": None,
-                               "range": None,  # Reset any range set by the Histogram
-                               "title": "Types of Pokémon"
-                            },
-                            "yaxis":{
-                                "title": "Frequency"
-                            }
-                             },
-                    ],
-                ), 
+                            "xaxis":{"dtick": None,"range": None,"title": "Types of Pokémon"},
+                            "yaxis":{"title": "Frequency"}, 
+                            "annotations":[ {"x":- 0.1,"y": .8,"xref": "paper","yref": "paper",
+                                              "text": (
+                                     f"<b>Stats for Bar Chart</b><br>"
+                                     f"Mean: {stat_type_list['mean']:.2f}<br>"
+                                     f"Median: {stat_type_list['median']:.2f}<br>"
+                                     f"Mode: {stat_type_list['mode']}<br>"
+                                     f"Range: {stat_type_list['range']}"),
+                                     "showarrow": False,
+                                     "font": {"size": 14, "color": "black"},
+                                     "align": "left",
+                                     "bgcolor": "rgba(255, 255, 255, 0.8)"},]}],), 
                 dict(
                     label="Histogram",
                     method="update",
                     args=[
-                        {"visible": [False, True]},  # Show bar chart, hide histogram
+                        {"visible": [False, True]},  
                         {
                             "title": "Histogram of Pokémon Levels Found in Trainers",
-                            "xaxis": {
-                                "dtick": 10,  
-                                "title": "Levels of Pokémon",  
-                            } ,
-                            "yaxis":{
-                                "title": "Probability of level occuring",
-                            }
-                        },
-                    ],
-                ),  
+                            "xaxis": {"dtick": 10,"title": "Levels of Pokémon"} ,
+                            "yaxis":{"title": "Probability of level occuring",},
+                             "annotations":[ {"x": -0.1,"y": .8,"xref": "paper","yref": "paper",
+                                              "text": (
+                                     f"<b>Stats for Histogram</b><br>"
+                                     f"Mean: {stat_level_list['mean']:.2f}<br>"
+                                     f"Median: {stat_level_list['median']:.2f}<br>"
+                                     f"Mode: {stat_level_list['mode']}<br>"
+                                     f"Range: {stat_level_list['range']}"),
+                                     "showarrow": False,
+                                     "font": {"size": 14, "color": "black"},
+                                     "align": "left",
+                                     "bgcolor": "rgba(255, 255, 255, 0.8)"},]}],),
+                        
+                
+                
             ],
             showactive=True,
+           
         )
-    ],
+    ],                           
     title="Frequency that types of pokemon appear in trainers",
-    margin=dict(l=50, r=50, t=50, b=120), 
+    margin=dict(l=200, r=50, t=50, b=120), 
     xaxis_title="types of pokemon",
-    yaxis_title="Frequency",
+    xaxis=dict(scaleanchor="y"),
+    yaxis_title="Frequency",annotations=[  
+        {
+            "x": -0.1,
+            "y": 0.8,
+            "xref": "paper",
+            "yref": "paper",
+            "text": (
+                f"<b>Stats for Bar Chart</b><br>"
+                f"Mean: {stat_type_list['mean']:.2f}<br>"
+                f"Median: {stat_type_list['median']:.2f}<br>"
+                f"Mode: {stat_type_list['mode']}<br>"
+                f"Range: {stat_type_list['range']}"
+            ),
+            "showarrow": False,
+            "font": {"size": 14, "color": "black"},
+            "align": "left",
+            "bgcolor": "rgba(255, 255, 255, 0.8)",
+            
+            
+        }
+    ],autosize=True,
+
           )    
 fig.update_xaxes(fixedrange=True)
 config = {

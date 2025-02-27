@@ -164,7 +164,7 @@ fig.update_layout(
                             "title": "Bar Chart of types of pokemon found in trainers",
                             "xaxis":{"dtick": None,"range": None,"title": "Types of Pokémon"},
                             "yaxis":{"title": "Frequency"}, 
-                            "annotations":[ {"x":- 0.1,"y": .8,"xref": "paper","yref": "paper",
+                            "annotations":[ {"x":6,"y": 5000,"xref": "x","yref": "y",
                                               "text": (
                                      f"<b>Stats for Bar Chart</b><br>"
                                      f"Mean: {stat_type_list['mean']:.2f}<br>"
@@ -184,7 +184,7 @@ fig.update_layout(
                             "title": "Histogram of Pokémon Levels Found in Trainers",
                             "xaxis": {"dtick": 10,"title": "Levels of Pokémon"} ,
                             "yaxis":{"title": "Probability of level occuring",},
-                             "annotations":[ {"x": -0.1,"y": .8,"xref": "paper","yref": "paper",
+                             "annotations":[ {"x": 0,"y": 15,"xref": "x","yref": "y",
                                               "text": (
                                      f"<b>Stats for Histogram</b><br>"
                                      f"Mean: {stat_level_list['mean']:.2f}<br>"
@@ -209,10 +209,10 @@ fig.update_layout(
     xaxis=dict(scaleanchor="y"),
     yaxis_title="Frequency",annotations=[  
         {
-            "x": -0.1,
-            "y": 0.8,
-            "xref": "paper",
-            "yref": "paper",
+            "x": 6,
+            "y": 5000,
+            "xref": "x",
+            "yref": "y",
             "text": (
                 f"<b>Stats for Bar Chart</b><br>"
                 f"Mean: {stat_type_list['mean']:.2f}<br>"

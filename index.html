@@ -10,12 +10,12 @@
 <LINK href="style.css" rel="stylesheet" type="text/css">
 <link rel="icon" type="image/x-icon" href="icon.ico">
 
-<script src="plot.js" defer></script>
+
 </head>
 
 
 <body>
-<a href="raw_table.html"><button type="button" >raw data</button></a> <a href="clean_table.html"><button type="button">cleaned data</button></a> <a href="form.html"><button>form</button></a> <a href="graph.html"><button>graph</button></a>
+<a href="raw_table.html"><button type="button" >raw data</button></a> <a href="clean_table.html"><button type="button">cleaned data</button></a> <a href="form.html"><button>form </button></a> <a href="graph.html"><button>graph</button></a> <a href="analysis.html"><button>analysis</button></a>
 
 <h1> Meeting the brief (max 400 words) </h1>
 
@@ -348,9 +348,31 @@ dependent on what starter<sup><a href="#11">[11]</a></sup> you pick.
 		<li>cleaned and comment code</li>
 	</ul></tr>
 </table>
+one of the problems that i encountered when making this project was getting the graph from the python code to the javascpirt code. the frist idea i haad to fix this problem was to try and use flask after looking into flask i diecded
+not to use it has it was new to me and seemed uneccesary for what i need to do. the second idea was to use the build in function in plotly to export an intreactive graph, after looking at the documation for this built in function, learned  that you can use jinja2 to 
+place it inside a html file in a aspefic place.i tryed this and it worked to get the graph onto the webpage but when trying to view the html code for the webpage it would crash my text editor. so to fixed this i reread the documation amd found that
+adding conditions to the builtin function can limit its size i removed it incluing the entirity of the plotjs and mathjax libarys and link them as script files on the top of the template file  i also set full_html to fasle so that it only sends the 
+where the grpah goes and the script for the graph. when i looked at what had been outputed was a a div with an unique id and the graph on a single line in a scprit tag after looking at this i had the idea to put the graph code that is inside the 
+scprit tag into a javascpirt fie and the div with the id to a html file and link the javascpirt to the html. to do this i used the string method to get the section of the output that is the div with the id and place it in the html file using the jinja2 template function.
+and then using the same string method i took the section that contains the graph and removed the parts that are inconpatable with javascpirt and places it in a javascpirt file using the same jinja2 template function. with these step up the graph shows cleanly 
+and can be easily viewed and debuged.
+<table>
+<tr>
+	<td>test table</td>
+</tr>
+<tr>
+	<td>  </td>
+	<td>test</td>
+	<td>outcome</td>
 
+</tr>
+<tr>
+	<td>test 1</td>
+	<td>used flask to push the graph into the webpage</td>
+	<td>decided not proced due to not being appalicle</td>
+</tr>
 
-
+</table>
 	<!--<img src="PokemonTypes.png" alt="iamge used to get colors for each type" style="width: 50%;";>-->
 
 	</p>
@@ -358,7 +380,7 @@ dependent on what starter<sup><a href="#11">[11]</a></sup> you pick.
 <br>
 <h1> Evaluation (approximately 300 words) </h1>
 
-	<p> </p>
+	<p> this project meets the /p>
 
 <br>
 
@@ -396,9 +418,11 @@ dependent on what starter<sup><a href="#11">[11]</a></sup> you pick.
        <div id="27">27.<a href=https://plotly.com/python/dropdowns/ >https://plotly.com/python/dropdowns/</a></div>
 	   <div id="28">28.<a href=https://plotly.com/python/creating-and-updating-figures/ >https://plotly.com/python/creating-and-updating-figures/</a></div>
 
-	   <div id= ""><a href=https://www.w3schools.com/tags/tag_a.asp>https://www.w3schools.com/tags/tag_a.asp</a> making this sick References thank you S</div>
+	   <div id=><a href=https://plotly.com/python/text-and-annotations/ >https://plotly.com/python/text-and-annotations/</a> adding text to grapahs</div>
+	   <div id= ""><a href=https://www.w3schools.com/tags/tag_a.asp>https://www.w3schools.com/tags/tag_a.asp</a> making  References </div>
 	   <div id=""><a href="PokemonTypes.png">PokemonTypes.png</a>colors </div>
 	   <div id= ""><a href=https://docs.python.org/3/library/re.html>https://docs.python.org/3/library/re.html</a>split </div>
+	   <div id= ""><a href=https://www.w3schools.com/python/module_statistics.asp>https://www.w3schools.com/python/module_statistics.asp</a>split </div>  
 	   <div id= ""><a href=https://www.w3.org/TR/html40/present/styles.html>https://www.w3.org/TR/html40/present/styles.html</a>to link a css file</div>
 	   <div id= ""><a href=https://www.w3schools.com/css/css_background.asp>https://www.w3schools.com/css/css_background.asp</a> background</div>
 	   <div id= ""><a href=https://www.w3schools.com/html/html_images.asp>https://www.w3schools.com/html/html_images.asp</a> images</div>
@@ -415,6 +439,10 @@ dependent on what starter<sup><a href="#11">[11]</a></sup> you pick.
 	   <div id= ""><a href=https://www.geeksforgeeks.org/convert-csv-to-html-table-in-python/ >https://www.geeksforgeeks.org/convert-csv-to-html-table-in-python/</a>text editing help 2</div>
 	   <div id= ""><a href=https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str character removing</a></div>
 	   <div id=""><a href=https://www.altcademy.com/blog/how-to-link-a-button-to-another-page-in-html/ >https://www.altcademy.com/blog/how-to-link-a-button-to-another-page-in-html/</a>linking buttons</div>
+	   <div id=""><a href=https://www.w3schools.com/html/html_forms.asp>https://www.w3schools.com/html/html_forms.asp</a>html form</div>
+	   <div id=""><a href=https://www.w3schools.com/css/css_form.asp>https://www.w3schools.com/css/css_form.asp</a>html form styling</div>
+	   <div id=""><a href=https://www.w3schools.com/js/js_validation.asp>https://www.w3schools.com/js/js_validation.asp</a>handing form inputs and vaildating</div>
+	   <div id=""><a href=https://www.w3schools.com/jsref/prop_win_localstorage.asp>https://www.w3schools.com/jsref/prop_win_localstorage.asp</a>using local stroage for the form</div>
 
 <br>
 

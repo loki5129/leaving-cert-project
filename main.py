@@ -227,7 +227,7 @@ fig.update_layout(
             
             
         }
-    ],autosize=True,
+    ],
 
           )    
 fig.update_xaxes(fixedrange=True)

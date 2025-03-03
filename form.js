@@ -158,20 +158,3 @@ function clear_table(){
 }
 
 
-function analysis() {
-  let users = JSON.parse(localStorage.getItem("userdata"))
-  console.log(users)
-  
-  users_age = 0
-  for (element in users){
-    users_age +=Number((users[element].age))
-  }
-
-  let user_count= users.length
-  let average_age = users_age/user_count
-  console.log("Total Age:", users_age);
-  console.log("User Count:", user_count);
-  console.log("Average Age:", average_age);
- 
-}
-

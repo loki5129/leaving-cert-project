@@ -151,12 +151,12 @@ dependent on what starter<sup><a href="#11">[11]</a></sup> you pick.
 <h1> Plan and design (approximately 400 words) </h1>
 
 	<p> i start the plan by researching how i planned on cleaning and searching the data i decided on using the pandas read_csv and pop to read and remove colums that i dont need form the csv.<sup><a href="#12">[12]</a></sup>then using the write_to_csv to make a clean csv file to use.<sup><a href="#13">[13]</a></sup>
-    i tried using the csv module's dict writer<sup><a href="#14">[14]</a></sup> but that did not fit the data i was working with.i then reasearched dictonaries<sup><a href="#15">[15][16][17][18][19][20]</a></sup> to learn how they work so that i could use them for the type counts .i wrote psedueo code<sup>[21]</sup> for the algohrim 
-	i plan on using to clean see fig.2 and search the code see fig.3. i then made the frist draft of the flowchart of the code. i reasearched ploting librarys at frist i was going to use matplotlib<sup><a id="#22">[22]</a></sup> but i then found out about ploty<sup><a id="#23">[23]</a></sup> and decided to use it beacuse it has a appeling ui and build ine interactivly.
+    i tried using the csv module's dict writer<sup><a href="#14">[14]</a></sup> but that did not fit the data i was working with.i then reasearched dictonaries<sup><a href="#15">[15][16][17][18][19][20]</a></sup> to learn how they work so that i could use them for the type counts .i wrote psedueo code<sup><a href=#21>[21]</a></sup> for the algohrim 
+	i plan on using to clean see fig.2 and search the code see fig.3. i then made the frist draft of the flowchart of the code. i reasearched ploting librarys at frist i was going to use matplotlib<sup><a href="#22">[22]</a></sup> but i then found out about ploty<sup><a href="#23">[23]</a></sup> and decided to use it beacuse it has a appeling ui and build ine interactivly.
     i spent a long time reasearching how to make a grpah in ploty using the graph_object libary<sup><a href="#24">[24]</a></sup> i decided to use this beacause it can make figures and make dropdown menus. i decided to make a histogram<sup><a href="#25">[25]</a></sup> on the levels 
-	of the pokemon and a bar chart<sup><a href="#26">[26]</a></sup> for the types. i will use the ploty graph_object libary to make a dropdownmeunu<sup><a href="#27">[27]</a></sup> for the graphs so that it can swap between them. this will use trace graphs<sup><a href="#27">[27]</a></sup>
+	of the pokemon and a bar chart<sup><a href="#26">[26]</a></sup> for the types. i will use the ploty graph_object libary to make a dropdownmeunu<sup><a href="#27">[27]</a></sup> for the graphs so that it can swap between them. this will use trace graphs<sup><a href="#28">[28]</a></sup>
 	and making one visible and invisble depaneding on the stat of the dropdown bar.  
-	i will be using visual studio code with the python exstention. i will use github to store
+	i will be using visual studio code with the python exstention. i will use github to store the project<sup><a href="#29">[29]</a></sup><br>
 	i used the pylance module mangener to get modules for python. the modules i will use are:
 	<h2>python modules</h2>
 <div>
@@ -164,6 +164,7 @@ dependent on what starter<sup><a href="#11">[11]</a></sup> you pick.
 		<li>pandas: for reading and editing data </li>
 	    <li>ploty:speficaly the graph_object libary for making the grpahs and the dropdown bar and export it into js</li>
 		<li>jinja2: i will use to place the graph into a javascpirt file using the template function</li>
+		<li>statistics to do analysis of the data</li>
 	</ul>
 </div>
     <h2>javascpirt modules</h2>
@@ -171,6 +172,7 @@ dependent on what starter<sup><a href="#11">[11]</a></sup> you pick.
 	<ul>
 	    <li>ploty:</li>
 		<li>mathjax:for symbols and letters used by plotly</li>
+		
 	</ul>
 </div>
 
@@ -194,26 +196,16 @@ dependent on what starter<sup><a href="#11">[11]</a></sup> you pick.
    <br>
 	
 	<br>
-	<div class="row">
-		<div class = "image-box">
-	 <img src="clean_pseduo.jpg" alt="psedueo code for cleaning algohrim" style="width: 50%;";>
-		<div class="image-text-box fig2">
-			<h1>fig.2</h1>
-		</div>
-	    </div>
-	<div class = "image-box">	
-		<img  src="search_pseduo.jpg" alt="psedueo code for searching algohrim" style="width:50%";>
-	    <div class="image-text-box fig3">
-			<h1>fig.3</h1>
-		</div>
-	</div>
+
+
+	
 	<div class="image-box">
 		<img src="flowchart.png" alt="flowchart for the code" style="width:50%";>
 		<div class="image-text-box fig4">
-			<h1>fig.4</h1>
+			<h1>fig.2</h1>
 		</div>
 	</div>
-	</div>
+
 	
 
 </p>
@@ -357,9 +349,7 @@ scprit tag into a javascpirt fie and the div with the id to a html file and link
 and then using the same string method i took the section that contains the graph and removed the parts that are inconpatable with javascpirt and places it in a javascpirt file using the same jinja2 template function. with these step up the graph shows cleanly 
 and can be easily viewed and debuged.
 <table class="center">
-<tr>
-	<td>test table</td>
-</tr>
+<th colspan="3">test table</th>
 <tr>
 	<td>  </td>
 	<td>test</td>
@@ -383,12 +373,27 @@ and can be easily viewed and debuged.
 <tr>
 	<td>test 4</td>
 	<td> used write to html function with conditions and wrote the div ti a html and wrote the script section into a javascpirt file.</td>
-	<td></td>
+	<td> output worked showed the graphs on the webpage and the file was clean and easy to edit due to the separation of the files</td>
 </tr>
 
 </table>
-	<!--<img src="PokemonTypes.png" alt="iamge used to get colors for each type" style="width: 50%;";>-->
 
+an algohrim that i used in this project was to extract the level from each index of the list of dictonaries like data. this was do by taking in the each index of the list turning it into a string and using various 
+re methods to remove section of the string until all that is left is the level for that index and that is then converted to a integer and retrun and then is append to a list of all the levels. this is done by putting the 
+function inside a for loop so it runs for every index of the list and then appends it to a list. the psedueo code is in the image below labeled fig.3. 
+<div class="image-box"> 
+<img src="clean_pseduo.jpg" alt="psedueo code for cleaning algohrim" style="width: 50%;";>
+	<div class="image-text-box fig3">
+		<h3>fig.3</h3>
+	</div>
+</div>
+<!----
+<div class = "image-box">	
+	<img  src="search_pseduo.jpg" alt="psedueo code for searching algohrim" style="width:50%";>
+	<div class="image-text-box fig3">
+		<h3>fig.4</h3>
+	</div>
+!-->
 	</p>
 
 <br>
@@ -431,6 +436,9 @@ and can be easily viewed and debuged.
 	   <div id="26">26.<a href=https://plotly.com/python/bar-charts/ >https://plotly.com/python/bar-charts/</a></div>
        <div id="27">27.<a href=https://plotly.com/python/dropdowns/ >https://plotly.com/python/dropdowns/</a></div>
 	   <div id="28">28.<a href=https://plotly.com/python/creating-and-updating-figures/ >https://plotly.com/python/creating-and-updating-figures/</a></div>
+	   <div id="29">28.<a href=https://github.com/loki5129/leaving-cert-project >https://github.com/loki5129/leaving-cert-project</a> github storage</div>
+
+
 
 	   <div id=><a href=https://plotly.com/python/text-and-annotations/ >https://plotly.com/python/text-and-annotations/</a> adding text to grapahs</div>
 	   <div id= ""><a href=https://www.w3schools.com/tags/tag_a.asp>https://www.w3schools.com/tags/tag_a.asp</a> making  References </div>
@@ -485,7 +493,7 @@ and can be easily viewed and debuged.
 	  </tr>
 	  <tr>
 		<td>4. Create </td>
-		<td >[ ]</td>
+		<td > 1,205</td>
 	  </tr>
 	  <tr>
 	  <tr>

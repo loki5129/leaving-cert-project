@@ -1,5 +1,5 @@
 table, th, td {
-    border: 1px solid black;
+    border: 1px solid #d8ebe6;
    
   
   }
@@ -16,7 +16,7 @@ h2{
     text-align: center
 }
 body{
-    background-color:black;
+    background-color:#2e2b2b;
     color:white;
 }
 .center {
@@ -46,19 +46,19 @@ body{
    
    color: white;
 }
-.fig2 {
-    margin:0;
-    text-align: left;
-    top:20%;
-    left:40%
-}
 .fig3 {
     margin:0;
     text-align: left;
     top:70%;
-    left:40%
+    left:45%
 }
 .fig4 {
+    margin:0;
+    text-align: left;
+    top:90%;
+    left:40%
+}
+.fig2 {
     margin:0;
     text-align: left;
     top:20%;

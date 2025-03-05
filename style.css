@@ -11,7 +11,7 @@ button{
 td{
   text-align: center;
  
-  color: white;
+  color: black;
 }
 .bg_flow{
   background-color: black;
@@ -101,9 +101,18 @@ ul{
 .nocenter,.result{
  text-align: left;
 }
-
 .table0{
   background-color: white;
+  color: black;
+
+}
+.table1 td,tr{
+ color:white;
+}
+.pc_bg{
+  background-size: 50%;
+}
+th{
   color:black;
 }
 *{
@@ -152,3 +161,10 @@ input[type=number], select {
     color: black;
     
   }
+.ref{
+  width: 58%;
+  height: 100%;
+  margin: auto;
+  
+  background-position-x: center; 
+}

@@ -42,7 +42,7 @@ two of these types are not in the data because they are only used in the latest 
  I also discovered that it does not include gym leader<sup><a href="#7">[7]</a></sup>,rivals<sup><a href="#8">[8]</a></sup>,elite four<sup><a href="#9">[9]</a></sup> and champions<sup><a href="#10">[10]</a></sup>. rivals are not included because their teams are 
 dependent on what starter<sup><a href="#11">[11]</a></sup> you pick.</p>
 	
- <table style="width:70%" class="center">
+ <table style="width:70%" class="center table1">
 	  <tr>
 		<th colspan="6">fig.1 </th>
 	  </tr>
@@ -216,7 +216,7 @@ dependent on what starter<sup><a href="#11">[11]</a></sup> you pick.</p>
 
 
 
-<h1> Create (approximately 1000 words) </h1>
+<h1> Create</h1>
 
 	<p> 
 	<!----i start by import all the module i will need for the project, pandas for reading and cleaning the csv. plotly_graph objects for making the graphs and jinja2 for the template function to place the export graphs into javascpirt. i started by using pandas's read_csv function to read the csv so it can be edited in python.
@@ -342,6 +342,7 @@ dependent on what starter<sup><a href="#11">[11]</a></sup> you pick.</p>
 		<li>cleaned and comment code</li>
 	</ul></tr>
 </table>
+<div>
 one of the problems that i encountered when making this project was getting the graph from the python code to the javascpirt code. the frist idea i haad to fix this problem was to try and use flask after looking into flask i diecded
 not to use it has it was new to me and seemed uneccesary for what i need to do. the second idea was to use the build in function in plotly to export an intreactive graph, after looking at the documation for this built in function, learned  that you can use jinja2 to 
 place it inside a html file in a aspefic place.i tryed this and it worked to get the graph onto the webpage but when trying to view the html code for the webpage it would crash my text editor. so to fixed this i reread the documation amd found that
@@ -349,7 +350,8 @@ adding conditions to the builtin function can limit its size i removed it inclui
 where the grpah goes and the script for the graph. when i looked at what had been outputed was a a div with an unique id and the graph on a single line in a scprit tag after looking at this i had the idea to put the graph code that is inside the 
 scprit tag into a javascpirt fie and the div with the id to a html file and link the javascpirt to the html. to do this i used the string method to get the section of the output that is the div with the id and place it in the html file using the jinja2 template function.
 and then using the same string method i took the section that contains the graph and removed the parts that are inconpatable with javascpirt and places it in a javascpirt file using the same jinja2 template function. with these step up the graph shows cleanly 
-and can be easily viewed and debuged.
+and can be easily viewed and debuged.</div>
+<br></br>
 <table class="center table0">
 <th colspan="3">test table</th>
 <tr>
@@ -379,17 +381,18 @@ and can be easily viewed and debuged.
 </tr>
 
 </table>
-
+<br>
+<div>	
 an algohrim that i used in this project was to extract the level from each index of the list of dictonaries like data. this was do by taking in the each index of the list turning it into a string and using various 
 re methods to remove section of the string until all that is left is the level for that index and that is then converted to a integer and retrun and then is append to a list of all the levels. this is done by putting the 
-function inside a for loop so it runs for every index of the list and then appends it to a list. the psedueo code is in the image below labeled fig.3. 
-<div class="image-box"> 
-<img src="clean_pseduo.jpg" alt="psedueo code for cleaning algohrim" style="width: 50%;";>
+function inside a for loop so it runs for every index of the list and then appends it to a list. the psedueo code is in the image below labeled fig.3. </div>
+<!--<div class="image-box pc_bg"> 
+<img src="clean_pseduo.jpg" alt="psedueo code for cleaning algohrim" style="width: 100%;";>
 	<div class="image-text-box fig3">
 		<h3>fig.3</h3>
 	</div>
 </div>
-<!----
+
 <div class = "image-box">	
 	<img  src="search_pseduo.jpg" alt="psedueo code for searching algohrim" style="width:50%";>
 	<div class="image-text-box fig3">
@@ -399,9 +402,9 @@ function inside a for loop so it runs for every index of the list and then appen
 	</p>
 
 <br>
-<h1> Evaluation (approximately 300 words) </h1>
+<h1> Evaluation</h1>
 
-	<p> this project meets the /p>
+	<p> this project meets the </p>
 
 <br>
 
@@ -410,6 +413,7 @@ function inside a for loop so it runs for every index of the list and then appen
 <h1> References </h1>
 
 	<p id=sources>
+		<div class="ref">
 	   <div id= "1">1.<a href=https://www.kaggle.com/datasets/lrcusack/pokemontrainers/data>https://www.kaggle.com/datasets/lrcusack/pokemontrainers/data</a> </div>
 	   <div id= "2">2.<a href=https://bulbapedia.bulbagarden.net/wiki/Level >https://bulbapedia.bulbagarden.net/wiki/Level</a></div>
 	   <div id= "3">3.<a href=https://www.reddit.com/r/pokemon/comments/jeo6pn/i_made_a_graph_of_how_many_times_each_pokemon_is/ >https://www.reddit.com/r/pokemon/comments/jeo6pn/i_made_a_graph_of_how_many_times_each_pokemon_is/ </a> </div>
@@ -467,7 +471,8 @@ function inside a for loop so it runs for every index of the list and then appen
 	   <div id=""><a href=https://www.w3schools.com/css/css_form.asp>https://www.w3schools.com/css/css_form.asp</a>html form styling</div>
 	   <div id=""><a href=https://www.w3schools.com/js/js_validation.asp>https://www.w3schools.com/js/js_validation.asp</a>handing form inputs and vaildating</div>
 	   <div id=""><a href=https://www.w3schools.com/jsref/prop_win_localstorage.asp>https://www.w3schools.com/jsref/prop_win_localstorage.asp</a>using local stroage for the form</div>
-
+	</div>
+	</p>
 <br>
 
 

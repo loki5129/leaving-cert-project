@@ -20,7 +20,7 @@
 <h1> Meeting the brief (max 400 words) </h1>
 
 	
-	<h2><a href=" " target="_blank">Link to video<a></h2>
+	<h2><a href=" " target="_blank">Link to video</a></h2>
 
 	<p> </p>
 
@@ -40,8 +40,9 @@ two of these types are not in the data because they are only used in the latest 
  What games were included in the data shown in fig.1, The ones in it are green and those in red are not in the data.To make this table I found a unique trainer in the game from a walkthrough on bulbapedia<sup><a href="#5">[5]</a></sup> 
  and cross checked it to see if it was in the data.This data also includes rematches that can be done after defeating a trainer the first time<sup><a href="#6">[6]</a></sup>.
  I also discovered that it does not include gym leader<sup><a href="#7">[7]</a></sup>,rivals<sup><a href="#8">[8]</a></sup>,elite four<sup><a href="#9">[9]</a></sup> and champions<sup><a href="#10">[10]</a></sup>. rivals are not included because their teams are 
-dependent on what starter<sup><a href="#11">[11]</a></sup> you pick.
-	 <table style="width:70%" class="center">
+dependent on what starter<sup><a href="#11">[11]</a></sup> you pick.</p>
+	
+ <table style="width:70%" class="center">
 	  <tr>
 		<th colspan="6">fig.1 </th>
 	  </tr>
@@ -199,12 +200,13 @@ dependent on what starter<sup><a href="#11">[11]</a></sup> you pick.
 
 
 	
-	<div class="image-box">
-		<img src="flowchart.png" alt="flowchart for the code" style="width:50%";>
-		<div class="image-text-box fig4">
-			<h1>fig.2</h1>
-		</div>
+	<div class="image-box bg_flow">
+		<img src="flowchart.png" alt="flowchart for the code" style="width:100%";>
+		<div class="image-text-box fig4 fig_box">
+			<h1 class="fig_box">fig.2</h1>
+		</div>	
 	</div>
+
 
 	
 
@@ -231,7 +233,7 @@ dependent on what starter<sup><a href="#11">[11]</a></sup> you pick.
 	i then used the ploty graph_object function figure to create a figure called fig and then using the add_trace function to add the bar and the histogram as traces to the figure and then used the ploty graph_objects function update traces to set the histogram visble to fasle and set the defualt visible as the bar chart.
 	i then used the ploty graph_objects update_layout to update the menu to create a dropdown menu that for each button makes the other graph invisble and makes the graph corresponding to the button visible and adds the corresponding title and axis labels. i then defined the config to remove the logo and remove all the buttons on the bar that i was not using.-->
   
-	<table class="center">
+	<table class="center table0">
  <tr>
 	<th>week</th>
 	<th>tasks</th>
@@ -348,7 +350,7 @@ where the grpah goes and the script for the graph. when i looked at what had bee
 scprit tag into a javascpirt fie and the div with the id to a html file and link the javascpirt to the html. to do this i used the string method to get the section of the output that is the div with the id and place it in the html file using the jinja2 template function.
 and then using the same string method i took the section that contains the graph and removed the parts that are inconpatable with javascpirt and places it in a javascpirt file using the same jinja2 template function. with these step up the graph shows cleanly 
 and can be easily viewed and debuged.
-<table class="center">
+<table class="center table0">
 <th colspan="3">test table</th>
 <tr>
 	<td>  </td>

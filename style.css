@@ -1,5 +1,6 @@
 table, th, td {
-    border: 1px solid #d8ebe6;
+    border: 1px solid black;
+    
    
   
   }
@@ -7,17 +8,40 @@ table, th, td {
 button{
     padding: 10px 10px;
 }
-
-p,h1,td,div,ul,li{
+td{
+  text-align: center;
+ 
+  color: white;
+}
+.bg_flow{
+  background-color: black;
+  width: 70vw;
+ 
+}
+p,h1,div,ul,li{
     text-align: center;
+    background-color: white;
+    color: black;
+}
+.clear{
+  background-color: transparent;
 }
 h2{
     font-size:larger ;
     text-align: center
 }
 body{
-    background-color:#2e2b2b;
-    color:white;
+    /*background-color:#2e2b2b;
+    color:white;*/
+    
+    background-image: url("bg.png");
+    
+     
+}
+
+.fig_box{
+  background-color: transparent;
+  color:white;
 }
 .center {
     margin-left: auto;
@@ -30,6 +54,7 @@ body{
     display: table;
     margin:0;
     text-align: left;
+    
     
 }
 .image-box {
@@ -44,7 +69,7 @@ body{
     text-align: left;
   
    
-   color: white;
+    
 }
 .fig3 {
     margin:0;
@@ -52,11 +77,13 @@ body{
     top:70%;
     left:45%
 }
+
 .fig4 {
     margin:0;
     text-align: left;
-    top:90%;
-    left:40%
+    top:95%;
+    left:80%
+  
 }
 .fig2 {
     margin:0;
@@ -65,7 +92,7 @@ body{
     left:40%
 }
 a{
-    color:white;
+    color:blue;
 }
 ul{
     display: inline-block;
@@ -75,8 +102,11 @@ ul{
  text-align: left;
 }
 
-
-* {
+.table0{
+  background-color: white;
+  color:black;
+}
+*{
     box-sizing: border-box;
   }
   

@@ -112,68 +112,68 @@ function full_record(){//funciton to test the full database
 
 
 
-function test(){
-  //alert(userdata[1][2])}
-  console.log(JSON.parse(localStorage.getItem("userdata")))
-}
-function table(){
-  let users=JSON.parse(localStorage.getItem("userdata"));
+
+function table(){//fucntion to create a table to display the all users data
+  let users=JSON.parse(localStorage.getItem("userdata"));//take in the database
   
-  if (!users||users.length === 0){
+  if (!users||users.length === 0){//if the database is emptpy
     alert("no users found");
-    return;
+    return;//alert and end
    } 
+   // checks if there is a table already being show
   table = document.getElementById("table")
-  if (!table){
-    var table = document.createElement("table");
-    table.setAttribute("id", "table");
+  if (!table){//if the table is not already show
+    var table = document.createElement("table");//get the table
+    table.setAttribute("id", "table"); //set attribute for the table
 
-
+    //create a header row 
     let header_row = document.createElement("tr");
-    let headers =["user id","username","age","state"]
+    let headers =["user id","username","age","state"]//define header names
     
-    headers.forEach(header => {
+    headers.forEach(header => {//loop through each index of header names and create text in the header for each
       let th = document.createElement("TH");
       let header_text = document.createTextNode(header);
       th.appendChild(header_text);
       header_row.appendChild(th);
     });
-
+//add the header row to the table and write it to the website
     table.appendChild(header_row);
     document.body.appendChild(table);
     
   }
 
-  
+  //count how row in the table exucling the header
    let row_count =  table.getElementsByTagName("tr").length - 1;
   
  
-  for (let i =row_count;i< users.length; i++){
-   let user = users[i];
-   if (!user){
+  for (let i =row_count;i< users.length; i++){//for the differnce between the length of the table and the amount of users iterate through loop
+   let user = users[i];//get the is the user with the user id of the 
+   if (!user){//check if the user is vaild and alerts the id if not
     alert("missing required data for user " +i);
-    continue;
+    continue;//skips this iteration
     } 
-    let row_there = document.getElementById("tr" + i);
-    if (row_there){
+    let row_there = document.getElementById("tr" + i);//check if there is a row with this id
+    if (row_there){//if there is a row with teh id skipp the iteraion
       continue;
     }
+    //create the row and give it an unqine id 
     let row =document.createElement("Tr");
     row.id = "mytr"+ i;
-    
+
+    //create a cell and text node for the row and add it to the row
     let cell = document.createElement("TD");
     let text = document.createTextNode(i + 1);
     cell.appendChild(text);
     row.appendChild(cell);
 
-    let data = [user.name,user.age,user.state];
-    data.forEach(element =>{
+    let data = [user.name,user.age,user.state];//gets the user's data
+    data.forEach(element =>{//for each index create a cell with a text node holding the data
       let cell = document.createElement("TD")
       let text = document.createTextNode(element);
       cell.appendChild(text),
-      row.appendChild(cell)
+      row.appendChild(cell)//add cell with text to the row
     });
-   table.appendChild(row)
+   table.appendChild(row)//add row to table
   }
 }
 

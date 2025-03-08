@@ -16,7 +16,12 @@ td{
 .bg_flow{
   background-color: black;
   width: 70vw;
- 
+
+
+}
+.bg_psuedo{
+  background-color: black;
+  width: 50vw;
 }
 p,h1,div,ul,li{
     text-align: center;
@@ -74,8 +79,8 @@ body{
 .fig3 {
     margin:0;
     text-align: left;
-    top:70%;
-    left:45%
+    top:80%;
+    left:85%
 }
 
 .fig4 {
@@ -109,9 +114,7 @@ ul{
 .table1 td,tr{
  color:white;
 }
-.pc_bg{
-  background-size: 50%;
-}
+
 th{
   color:black;
 }
@@ -136,31 +139,6 @@ th{
 .whiteb{
     border: 1px solid white;
 }
-input[type=text], select {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-  }
-input[type=number], select {
-    width: 7%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-  }
-  .for {
-    border-radius: 5px;
-    background-color: #f2f2f2;
-    padding: 20px;
-    color: black;
-    
-  }
 .ref{
   width: 58%;
   height: 100%;

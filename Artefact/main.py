@@ -135,7 +135,7 @@ bar_chart=go.Bar(
  
 
 
-
+#creates the histogram with the level list and sets x gaps as 10
 histogram=go.Histogram(
     x=level_list,
     histnorm="percent",
@@ -147,10 +147,13 @@ histogram=go.Histogram(
     xhoverformat="Q%q",
     hovertemplate="<b>Probability: </b>%{y}% "
     )
+
+#create a figure and add the bar chart and histogeam as traces
 fig=go.Figure() 
 fig.add_trace(bar_chart)
 fig.add_trace(histogram)
 
+#sets both the traces to be not visible and sets the default visble to be the bar chart 
 fig.update_traces(visible=False)
 fig.data[0].visible = True
 
@@ -158,45 +161,47 @@ fig.data[0].visible = True
 fig.update_layout(
     
    
-    
+    #creates the dropdown
     updatemenus=[
         dict(
             type="dropdown",
             direction="down",
             buttons=[
                 dict(
-                    label="Bar chart",
-                    method="update",
+                    label="Bar chart",#label change
+                    method="update",#update it to change the graph
                     args=[
-                        {"visible": [True, False]},  
+                        {"visible": [True, False]},  #makes the bar chart visible and histogram not 
                         {
-                            "title": "Bar Chart of types of pokemon found in trainers",
-                            "xaxis":{"dtick": None,"range": None,"title": "Types of Pokémon"},
-                            "yaxis":{"title": "Frequency"}, 
-                            "annotations":[ {"x":6,"y": 5000,"xref": "x","yref": "y",
+                            "title": "Bar Chart of types of pokemon found in trainers", # title defined
+                            "xaxis":{"dtick": None,"range": None,"title": "Types of Pokémon"},#label x axis
+                            "yaxis":{"title": "Frequency"}, #label y axis
+                            "annotations":[ {"x":6,"y": 5000,"xref": "x","yref": "y", # postions text box for statisics
                                               "text": (
+                                    #addes the statisics for the types in the box
                                      f"<b>Stats for Bar Chart</b><br>"
-                                     f"Mean: {stat_type_list['mean']:.2f}<br>"
+                                     f"Mean: {stat_type_list['mean']:.2f}<br>" #correct to 2 decimal places
                                      f"Median: {stat_type_list['median']:.2f}<br>"
                                      f"Mode: {stat_type_list['mode']}<br>"
                                      f"Range: {stat_type_list['range']}"),
-                                     "showarrow": False,
+                                     "showarrow": False, # make it not show messy arrows
                                      "font": {"size": 14, "color": "black"},
                                      "align": "left",
                                      "bgcolor": "rgba(255, 255, 255, 0.8)"},]}],), 
                 dict(
-                    label="Histogram",
-                    method="update",
+                    label="Histogram", #label change
+                    method="update",#update it to change the graph
                     args=[
-                        {"visible": [False, True]},  
+                        {"visible": [False, True]},  #makes the histogram visible and bar chart not 
                         {
-                            "title": "Histogram of Pokémon Levels Found in Trainers",
-                            "xaxis": {"dtick": 10,"title": "Levels of Pokémon"} ,
-                            "yaxis":{"title": "Probability of level occuring",},
-                             "annotations":[ {"x": 0,"y": 15,"xref": "x","yref": "y",
+                            "title": "Histogram of Pokémon Levels Found in Trainers", #title defined
+                            "xaxis": {"dtick": 10,"title": "Levels of Pokémon"} ,#label x axis
+                            "yaxis":{"title": "Probability of level occuring",},#label y axis
+                             "annotations":[ {"x": 0,"y": 15,"xref": "x","yref": "y",# postions text box for statisics
                                               "text": (
+                                      #addes the statisics for the level in the box
                                      f"<b>Stats for Histogram</b><br>"
-                                     f"Mean: {stat_level_list['mean']:.2f}<br>"
+                                     f"Mean: {stat_level_list['mean']:.2f}<br>" #correct to 2 decimal places
                                      f"Median: {stat_level_list['median']:.2f}<br>"
                                      f"Mode: {stat_level_list['mode']}<br>"
                                      f"Range: {stat_level_list['range']}"),
@@ -216,6 +221,7 @@ fig.update_layout(
     margin=dict(l=200, r=50, t=50, b=120), 
     xaxis_title="types of pokemon",
     xaxis=dict(scaleanchor="y"),
+    #sets the text box to appear in the default bar chart before the buttons is used
     yaxis_title="Frequency",annotations=[  
         {
             "x": 6,
@@ -239,7 +245,11 @@ fig.update_layout(
     ],
 
           )    
+
+
 fig.update_xaxes(fixedrange=True)
+
+#sets the config to remove the logo and the buttons that i will not use
 config = {
    "displaylogo": False,
     "modeBarButtonsToRemove": [
@@ -252,36 +262,46 @@ config = {
         "toimage"]
 }
 
+#test for the graph
 #fig.show(config=config)
 
 
 
-
+#sets the file ouput and input file path for the graph's javascriprt
 output_js_path=r"plot.js"
 input_templatejs_path = r"template.js"
+
+#using template sytanx set it to replace {{fig}} with the to_html fucntion of the graph with condintons to reduce size and set custom config
+
 plotly_jinja_data = {"fig":fig.to_html(full_html=False,include_plotlyjs=False,include_mathjax=False,default_height=800,config=config)}
 
-
+#use the template funvtion to place the graph in a javascript file after replace {{fig}} with the graph export
 with open(output_js_path, "w", encoding="utf-8") as output_file:
     with open(input_templatejs_path) as template_file:
         j2_template = Template(template_file.read())
         output_file.write(j2_template.render(plotly_jinja_data))
 
-
+#reads the exported graph text and makes it assecislbe to view
 with open(output_js_path,"r")as f:
     lines=f.read()
-    
+
+
+#takes the fist 148 characters as the div and stores it this is the div that the graph is sent to by the javascript
 div=lines[:148]
+#changes lines to remove the frist 215 characters and the last 48 as this are not compatilable with the javascpirt
 lines=lines[215:-48]
 
+#writes the new and cleaned graph code to the javascript file
 with open(output_js_path,"w")as f:
     f.write(lines)
 
-
+#define the input and ouput html files
 input_html_path = r"template.html"
 output_html_path = r"graph.html"
 
 plotly_jinja_data = {"fig":div}
+
+#using jinja template replace the {{fig}} in the input html file and place the div that the graph will be placed in and writes it to the ouput file
 with open(output_html_path, "w", encoding="utf-8") as output_file:
     with open(input_html_path) as template_file:
         j2_template = Template(template_file.read())

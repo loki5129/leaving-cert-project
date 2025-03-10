@@ -4,7 +4,10 @@ table, th, td {
    
   
   }
-
+.nomargin{
+  padding-left: 0%;
+  padding-right: 0%;
+}
 button{
     padding: 10px 10px;
 }

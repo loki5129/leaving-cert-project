@@ -29,6 +29,7 @@ h1,div,ul,li{
     text-align: center;
     background-color: white;
     color: black;
+    word-wrap: break-word;
 }
 p{
   text-align: left;
@@ -160,6 +161,7 @@ p {
   margin-inline-start: 0px;
   margin-inline-end: 0px;
   unicode-bidi: isolate;
+  word-wrap: break-word;
 }
 h1{
   width: 50%;
@@ -167,4 +169,53 @@ h1{
   margin: auto;
   
   background-position-x: center; 
+}
+
+        .container {
+          max-width: 100%;
+          overflow: hidden;
+          text-align: center; 
+      }
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto; /* Centers the image horizontally */
+      }
+
+.nav{
+  list-style-type:none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+  position: fixed;
+  z-index: 1000;
+  }
+.ns{
+  float:left;
+  }
+      
+.ns a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+      }
+      
+.nav a:hover:not(.active){
+  background-color: #333;
+      }
+.n{
+  background-color: black;
+}
+
+li{
+  text-align: left;
+}
+.sub-list {
+  
+  list-style-type: none;
 }

@@ -15,14 +15,15 @@
 
 
 <body>
-<a href="raw_table.html"><button type="button" >raw data</button></a> <a href="clean_table.html"><button type="button">cleaned data</button></a> 
 
+ 
 <h1> Meeting the brief (max 400 words) </h1>
 
-	
+
+
 	<h2><a href=" " target="_blank">Link to video</a></h2>
 
-	<p> </p>
+
 
 <br>
 
@@ -151,13 +152,13 @@ dependent on what starter<sup><a href="#11">[11]</a></sup> you pick.</p>
 <br>
 <h1 > Plan and Design (approximately 400 words) </h1>
 
-	<p> i start the plan by researching how i planned on cleaning and searching the data i decided on using the pandas read_csv and pop to read and remove colums that i dont need form the csv.<sup><a href="#12">[12]</a></sup>then using the write_to_csv to make a clean csv file to use.<sup><a href="#13">[13]</a></sup>
-    i tried using the csv module's dict writer<sup><a href="#14">[14]</a></sup> but that did not fit the data i was working with.i then reasearched dictonaries<sup><a href="#15">[15][16][17][18][19][20]</a></sup> to learn how they work so that i could use them for the type counts .i wrote psedueo code<sup><a href=#21>[21]</a></sup> for the algohrim 
-	i plan on using to clean see fig.2 and search the code see fig.3. i then made the frist draft of the flowchart of the code. i reasearched ploting librarys at frist i was going to use matplotlib<sup><a href="#22">[22]</a></sup> but i then found out about ploty<sup><a href="#23">[23]</a></sup> and decided to use it beacuse it has a appeling ui and build ine interactivly.
-    i spent a long time reasearching how to make a grpah in ploty using the graph_object libary<sup><a href="#24">[24]</a></sup> i decided to use this beacause it can make figures and make dropdown menus. i decided to make a histogram<sup><a href="#25">[25]</a></sup> on the levels 
-	of the pokemon and a bar chart<sup><a href="#26">[26]</a></sup> for the types. i will use the ploty graph_object libary to make a dropdownmeunu<sup><a href="#27">[27]</a></sup> for the graphs so that it can swap between them. this will use trace graphs<sup><a href="#28">[28]</a></sup>
-	and making one visible and invisble depaneding on the stat of the dropdown bar.  
-	i will be using visual studio code with the python exstention. i will use github to store the project<sup><a href="#29">[29]</a></sup><br>
+	<p> i started by researching how to clean and search the data i decided on using the pandas read_csv and pop to read and remove colums that i dont need from the csv.<sup><a href="#12">[12]</a></sup>then using the write_to_csv function to make a clean csv file to use.<sup><a href="#13">[13]</a></sup>
+    i tried using the csv module's dict writer<sup><a href="#14">[14]</a></sup> but that did not fit the data i was working with.i then reasearched dictonaries<sup><a href="#15">[15][16][17][18][19][20]</a></sup> to learn how they work so that i could use them for the type counts.
+    i then made the frist draft of the flowchart of the code. i reasearched ploting librarys at frist i was going to use matplotlib<sup><a href="#21">[21]</a></sup> but i then found out about ploty<sup><a href="#22">[22]</a></sup> and decided to use it beacuse it has a appeling ui and build in interactivly.
+    i spent a long time reasearching how to make a grpah in ploty using the graph_object libary<sup><a href="#23">[23]</a></sup> i decided to use this beacause it can make figures and make dropdown menus. i decided to make a histogram<sup><a href="#24">[24]</a></sup> on the levels 
+	of the pokemon and a bar chart<sup><a href="#25">[25]</a></sup> for the types. i will use the ploty graph_object libary to make a dropdownmeunu<sup><a href="#26">[26]</a></sup> for the graphs so that it can swap between them. this will use trace graphs<sup><a href="#27">[27]</a></sup>
+	and making one visible and invisble depaneding on the stat of the dropdown bar. i the reasearched javascpirt and making forms<sup><a href="#28"></a></sup> i deiced to use localstorage<sup><a href="#29">[29]</a></sup> to make the database for my form. 
+	i will be using visual studio code with the python exstention. i will use github to store the project<sup><a href="#30">[30]</a></sup><br>
 	i used the pylance module mangener to get modules for python. the modules i will use are:
 	<h2>python modules</h2>
 <div>
@@ -166,9 +167,11 @@ dependent on what starter<sup><a href="#11">[11]</a></sup> you pick.</p>
 	    <li>ploty:speficaly the graph_object libary for making the grpahs and the dropdown bar and export it into js</li>
 		<li>jinja2: i will use to place the graph into a javascpirt file using the template function</li>
 		<li>statistics to do analysis of the data</li>
+		<li>re to edit strings</li>
+		
 	</ul>
 </div>
-    <h2>javascpirt modules</h2>
+    <div><h2>javascpirt modules</h2></div>
 <div>
 	<ul>
 	    <li>ploty:</li>
@@ -176,24 +179,71 @@ dependent on what starter<sup><a href="#11">[11]</a></sup> you pick.</p>
 		
 	</ul>
 </div>
+<div>
+</p>
+		
+<div><h2>meeting the basic requminets</h2></div>
 
-	<h2> meeting basic requiments</h2>
-	<p>
-	1. 
-	  (a)i collected a dataset from kaggle.
-	  (b)i cleaned the dataset being turning it from a sqlite file into a useable csv. then i removed the columns that i did not need.
-	2.
-	 (a)i carried out analytics by  turning them into 2 graphs using plotly
-	 (b) i ensured to label my axis according ot the data shown.
-	 (c) i used list and dictonaries to store my data
-	3. 
-	 (a) i made a website using html, css and javascpirt.
-	 (b)the graphs are shown 
-	<p></p>
-   <h1>meeting advanced requiments</h1>
-   <p>
+<ul class="sub-list">
+	<li><strong> 1.Collect and prepare the data</strong>
+		<br>
+		<ul class="sub-list">
+			<li>a. i choose the a dataset that i found on kaggle</li>
+			<li>b. i will use pandas pop, write_to_csv and to_dict functions to clean and extract, store and clean the data</li>
+			
+		</ul>
+	</li>
+	<li><strong>2. Data analytics and visualisation</strong>
+		<br>
+		<ul class="sub-list">
+			<li>a. i will use the statistics moudle to analysis the data and will use ploty graph_object libary to make a bar chart and a histogram</li>
+			<li>b. i will the axis according to the graph and have them dyanmically change when dropdown is swaped</li>
+			<li>c. i will use lists and dictonaries to store thoughout the project</li>
+		</ul>
+	</li>
+	<li><strong>3.create a basic intreactive informantion system interface</strong>
+		<br>
+		<ul class="sub-list">
+			<li>a. i will use html to display the cleaned and raw data and imformation about the porject</li>
+		    <li>b. i will display the graphs that will be exported using the plotly write_to_html fucntion </li>
+		</ul>
+	</li>
+</ul>
 
-   </p>
+<br>
+<div><h2> meeting advanced requminets</h2></div>
+
+<ul class="sub-list">
+   <li><strong>1.intreactive graphs</strong>
+	<br>
+	<ul class="sub-list">
+		<li>i will use the graph_object libary to make the ploty graph intreactive</li>
+		<li>this we included a dropdown to swap betwee the two graphs</li>
+	</ul>
+   </li>
+   <li><strong>2.create a form relating to my chosen dataset that collects and stores user data</strong>
+	<br>
+	<ul class="sub-list">
+		<li>a. the form with take in a string, an intger and a boolean value</li>
+		<li>b. the data will be validated using logic statments and will be store in a database created with localstorage</li>
+		<li>c. the data of all users will be display in a updatable table </li>
+	</ul>
+  </li>
+  <li><strong>3.create a spearte area that makes recommendations based on the dataset</strong>
+	<br>
+	<ul class="sub-list">
+		<li> i will create a sperate webpage to show reccomends on the dataset and analysis of the dataset</li>
+	</ul>
+
+
+  </li>
+
+
+
+
+</ul>
+</div>
+
    <br>
 	
 	<br>
@@ -207,10 +257,10 @@ dependent on what starter<sup><a href="#11">[11]</a></sup> you pick.</p>
 		</div>	
 	</div>
 </p>
-	<div class="image-box bg_flow nomargin">
-		<img src="flowchart_js.png" alt="flowchart for the code" style="width:100%";>
+	<div class="image-box bg_flow container">
+		<img src="flowchart_js.png" alt="flowchart for the code" style="width:200%";>
 		<div class="image-text-box fig4 fig_box">
-			<h1 class="fig_box">fig.2</h1>
+			<h1 class="fig_box">fig.3</h1>
 		</div>	
 	</div>
 	
@@ -399,7 +449,7 @@ function inside a for loop so it runs for every index of the list and then appen
 <div class="image-box bg_psuedo"> 
 <img src="psuedo_code.png" alt="psedueo code for cleaning algohrim" style="width: 100%;";>
 	<div class="image-text-box fig3 fig_box">
-		<h3>fig.3</h3>
+		<h3>fig.4</h3>
 	</div>
 </div>
 
@@ -438,18 +488,21 @@ function inside a for loop so it runs for every index of the list and then appen
 	   <div id= "18">18.<a href=https://www.w3schools.com/python/python_dictionaries_add.asp>https://www.w3schools.com/python/python_dictionaries_add.asp</a></div>
 	   <div id= "19">19.<a href=https://www.w3schools.com/python/python_dictionaries_remove.asp>https://www.w3schools.com/python/python_dictionaries_remove.asp</a></div>
 	   <div id= "20">20.<a href=https://www.w3schools.com/python/python_dictionaries_methods.asp>https://www.w3schools.com/python/python_dictionaries_methods.asp</a></div>
-	   <div id= "21">21.<a href=https://www.geeksforgeeks.org/how-to-write-a-pseudo-code/ >https://www.geeksforgeeks.org/how-to-write-a-pseudo-code/</a></div>
-	   <div id="22">22.<a href=https://matplotlib.org>https://matplotlib.org</a></div>
-	   <div id="23">23.<a href=https://plotly.com/python/ >https://plotly.com/python/</a></div>
-	   <div id="24">24.<a href=https://plotly.com/python/creating-and-updating-figures/#figures-as-graph-objects>https://plotly.com/python/creating-and-updating-figures/#figures-as-graph-objects</a></div>
-       <div id="25">25.<a href=https://plotly.com/python/histograms/ >https://plotly.com/python/histograms/</a></div>
-	   <div id="26">26.<a href=https://plotly.com/python/bar-charts/ >https://plotly.com/python/bar-charts/</a></div>
-       <div id="27">27.<a href=https://plotly.com/python/dropdowns/ >https://plotly.com/python/dropdowns/</a></div>
-	   <div id="28">28.<a href=https://plotly.com/python/creating-and-updating-figures/ >https://plotly.com/python/creating-and-updating-figures/</a></div>
-	   <div id="29">28.<a href=https://github.com/loki5129/leaving-cert-project >https://github.com/loki5129/leaving-cert-project</a> github storage</div>
+	   <div id="21">21.<a href=https://matplotlib.org>https://matplotlib.org</a></div>
+	   <div id="22">22.<a href=https://plotly.com/python/ >https://plotly.com/python/</a></div>
+	   <div id="23">23.<a href=https://plotly.com/python/creating-and-updating-figures/#figures-as-graph-objects>https://plotly.com/python/creating-and-updating-figures/#figures-as-graph-objects</a></div>
+       <div id="24">24.<a href=https://plotly.com/python/histograms/ >https://plotly.com/python/histograms/</a></div>
+	   <div id="25">25.<a href=https://plotly.com/python/bar-charts/ >https://plotly.com/python/bar-charts/</a></div>
+       <div id="26">26.<a href=https://plotly.com/python/dropdowns/ >https://plotly.com/python/dropdowns/</a></div>
+	   <div id="27">27.<a href=https://plotly.com/python/creating-and-updating-figures/ >https://plotly.com/python/creating-and-updating-figures/</a></div>
+	   <div id="28">28.<a href=https://www.w3schools.com/html/html_forms.asp>https://www.w3schools.com/html/html_forms.asp</a>html form</div>
+	   <div id="29">29.<a href=https://www.w3schools.com/jsref/prop_win_localstorage.asp>https://www.w3schools.com/jsref/prop_win_localstorage.asp</a>using local stroage for the form</div>
+
+	   <div id="30">30.<a href=https://github.com/loki5129/leaving-cert-project >https://github.com/loki5129/leaving-cert-project</a> github storage</div>
 
 
-
+	   <div><a href=https://www.geeksforgeeks.org/how-to-write-a-pseudo-code/ >https://www.geeksforgeeks.org/how-to-write-a-pseudo-code/</a></div>
+	   
 	   <div id=><a href=https://plotly.com/python/text-and-annotations/ >https://plotly.com/python/text-and-annotations/</a> adding text to grapahs</div>
 	   <div id= ""><a href=https://www.w3schools.com/tags/tag_a.asp>https://www.w3schools.com/tags/tag_a.asp</a> making  References </div>
 	   <div id=""><a href="PokemonTypes.png">PokemonTypes.png</a>colors </div>
@@ -471,10 +524,10 @@ function inside a for loop so it runs for every index of the list and then appen
 	   <div id= ""><a href=https://www.geeksforgeeks.org/convert-csv-to-html-table-in-python/ >https://www.geeksforgeeks.org/convert-csv-to-html-table-in-python/</a>text editing help 2</div>
 	   <div id= ""><a href=https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str character removing</a></div>
 	   <div id=""><a href=https://www.altcademy.com/blog/how-to-link-a-button-to-another-page-in-html/ >https://www.altcademy.com/blog/how-to-link-a-button-to-another-page-in-html/</a>linking buttons</div>
-	   <div id=""><a href=https://www.w3schools.com/html/html_forms.asp>https://www.w3schools.com/html/html_forms.asp</a>html form</div>
+	   
 	   <div id=""><a href=https://www.w3schools.com/css/css_form.asp>https://www.w3schools.com/css/css_form.asp</a>html form styling</div>
 	   <div id=""><a href=https://www.w3schools.com/js/js_validation.asp>https://www.w3schools.com/js/js_validation.asp</a>handing form inputs and vaildating</div>
-	   <div id=""><a href=https://www.w3schools.com/jsref/prop_win_localstorage.asp>https://www.w3schools.com/jsref/prop_win_localstorage.asp</a>using local stroage for the form</div>
+
 	</div>
 	</p>
 <br>

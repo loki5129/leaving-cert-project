@@ -1,16 +1,8 @@
-takes in input data.
-converts the data into a string.
-turns the string into all lowercase.
-removes special character and bracket from the data.
-splits the string into list spilting at the commas
-removes the two elements of the list.
-removes the last element of the list.
-converts edited lsit back into a string.
-removes "'pokelevel':" from the string.
-removes any leftover special characters and brackets
-converts data into a integer
-returns the integer value
 
-
+create dictonary to store stats for data
+get the mean of  data
+get the median of  data
+get the range of  data
+get the mode of data
 
 

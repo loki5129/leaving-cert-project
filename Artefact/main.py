@@ -19,6 +19,8 @@ filename = "cleaned_data.csv"
 
 #reads new csv and turns it into a list of rows
 data = read_csv(filename)
+#print(data.describe())
+
 data_dict = data.to_dict(orient='records')
 
 #creates empty list for levels and empty dict for types
@@ -99,7 +101,6 @@ bar_chart_x=[]
 for i in range(len(keys)):
     bar_chart_y.append(types[keys[i]])
     bar_chart_x.append(keys[i])
-
 
 #get the mean meadian range and mode for the count of types in the data
 stat_type_list ={
@@ -307,4 +308,49 @@ with open(output_html_path, "w", encoding="utf-8") as output_file:
         j2_template = Template(template_file.read())
         output_file.write(j2_template.render(plotly_jinja_data))
 
+analysis_txt=""
 
+
+if sum(types.values())<10000:
+    analysis_txt= analysis_txt +"dataset is small and more data is required to refine it further"
+   
+elif 10000<sum(types.values())<20000:
+    analysis_txt= analysis_txt +"dataset is a medsium sized more data is required to refine it further"
+  
+elif sum(types.values())>20000:
+ analysis_txt= analysis_txt +"dataset is a large more data may be required to refine it further"
+
+
+
+if stat_type_list["mean"]>stat_type_list["median"]:
+    analysis_txt =analysis_txt + "<br>"+"data is right skewed higher values expected"
+elif  stat_type_list["mean"]<stat_type_list["median"]:
+    analysis_txt = analysis_txt + "<br>"+"data is left skewed lower values expected"
+elif stat_type_list["mean"]==stat_type_list["median"]:
+    analysis_txt =analysis_txt+"<br>"+ " the data is normally distributed"
+
+
+if stat_level_list["mean"]!=50:
+    analysis_txt = analysis_txt + "<br>"+"the mean of the level data is inblancled and more data is required for an accurate result"
+if stat_level_list["mean"] == 50:
+    analysis_txt = analysis_txt +" <br>"+" the mean of the level data is balanced, data is not required to refine the result"
+
+if stat_level_list["range"]<80:
+    analysis_txt = analysis_txt+"<br>"+"the range of the level data is inaccurate and more data is required to refine the result"
+if stat_level_list["range"] >90:
+    analysis_txt=analysis_txt+ " <br>"+"the range  of level data is relativitly accurate"
+
+#print(analysis_txt)
+
+
+print(sum(types.values()))
+input_html_path = r"template1.html"
+output_html_path = r"analysis.html"
+
+plotly_jinja_data = {"fig":analysis_txt}
+
+#using jinja template replace the {{fig}} in the input html file and place the div that the graph will be placed in and writes it to the ouput file
+with open(output_html_path, "w", encoding="utf-8") as output_file:
+    with open(input_html_path) as template_file:
+        j2_template = Template(template_file.read())
+        output_file.write(j2_template.render(plotly_jinja_data))

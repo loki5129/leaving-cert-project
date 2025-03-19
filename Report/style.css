@@ -54,6 +54,8 @@ body{
 .fig_box{
   background-color: transparent;
   color:white;
+  word-wrap:normal;
+  overflow-wrap:normal ;
 }
 .center {
     margin-left: auto;
@@ -87,21 +89,27 @@ body{
     margin:0;
     text-align: left;
     top:80%;
-    left:85%
+    left:85%;
+    word-wrap:normal;
+    overflow-wrap:normal ;
 }
 
 .fig4 {
     margin:0;
     text-align: left;
     top:95%;
-    left:80%
+    left:80%;
+    word-wrap:normal;
+    overflow-wrap:normal ;
   
 }
 .fig2 {
     margin:0;
     text-align: left;
-    top:20%;
-    left:40%
+    top:80%;
+    left:80%;
+    word-wrap:normal;
+    overflow-wrap:normal ;
 }
 a{
     color:blue;
@@ -219,3 +227,4 @@ li{
   
   list-style-type: none;
 }
+
